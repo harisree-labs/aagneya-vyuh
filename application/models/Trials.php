@@ -15,5 +15,7 @@ class Trials extends CI_Model {
                 $this->load->database();
         }
 
-        public log_user_inputs($user_id, )
+        public function log_user_inputs($user_id ){
+            
+        }
 }

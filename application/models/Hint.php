@@ -14,20 +14,20 @@ class Hint extends CI_Model {
         }
 
 
-        public get_hints_for_level($level_no){
+        public function get_hints_for_level($level_no){
 
 
         
         }
 
 
-        public get_all_hints(){
+        public function get_all_hints(){
 
 
 
         }
 
-        public add_hint($level_no, $hint){
+        public function add_hint($level_no, $hint){
 
 
 
