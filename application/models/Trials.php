@@ -1,6 +1,5 @@
 <?php
 
-
 class Trials extends CI_Model {
 
         public $trial_id;
