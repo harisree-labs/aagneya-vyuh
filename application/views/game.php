@@ -1,3 +1,5 @@
+<link href="/vyuh/assets/css/game.css" rel="stylesheet" id="bootstrap-css">
+
 <div class="wrap">
   <h1>Penny's 27th<br>Treasure Hunt</h1>
   <img class="mascot" src="http://nouveller.dropbox.s3.amazonaws.com/treasure.png" alt="">
@@ -15,3 +17,5 @@
     <a href="#" class="button modal__close">Close</a>
   </div>
 </div>
+
+<script src="/vyuh/assets/js/game.js"></script>
