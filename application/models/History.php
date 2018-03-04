@@ -23,7 +23,7 @@ class History extends CI_Model {
 
         public function log_user_activity($user_history){
 
-                this->db->insert($user_history);
+                $this->db->insert($user_history);
 
         }
 
@@ -34,7 +34,7 @@ class History extends CI_Model {
 
         }
 
-        public function get_all_logs($userId){
+        public function get_all_logs_for_user($userId){
 
 
 

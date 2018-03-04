@@ -15,8 +15,8 @@ class Profile extends CI_Controller
 
     // retrieve available user data from db and load profile view
     public function index(){
-        $email = $this->session->userdata('email');
-        if ($email) {
+        @$email = $this->session->userdata('email');
+        if (!$email) {
             $userData = array();
             $userData = $this->user->retrieve_user_data($email);
             // print_r($userData);

@@ -16,6 +16,7 @@ class Manage_levels extends CI_Controller
     // retrieve available questions from db and load question view
     public function index(){
         $email = $this->session->userdata('email');
+        // echo $email;
         if ($email) {
             // $levelData_admin = array();
             $data['levelData_admin'] = $this->level->retrieve_level_data_admin();

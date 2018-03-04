@@ -11,6 +11,7 @@ class User_Authentication extends CI_Controller
 
         //Load user model
         $this->load->model('user');
+        // $this->load->model('history');
 
         $this->config->load('facebook');
 
@@ -58,7 +59,6 @@ class User_Authentication extends CI_Controller
             // Check if user is logged in
             if($this->facebook->is_authenticated()){
 
-
                 // Get user facebook profile details
                 $userProfile = $this->facebook->request('get', '/me?fields=id,first_name,last_name,email,gender,locale,picture');
 
@@ -70,6 +70,10 @@ class User_Authentication extends CI_Controller
 
            
                 if($this->user->user_registered($userData)) {//['email']
+
+                    /*$user_history = new History("1","LOGIN","1","127.0.0.1");
+
+                    $this->history->log_user_activity($user_history);*/
 
                     //echo "</br>session setting for ",$userData['email'];
                     $this->session->set_userdata('email',$userData['email']);
@@ -102,5 +106,5 @@ class User_Authentication extends CI_Controller
         // Redirect to login page
         redirect('/user_authentication');
     }
-    
+
 }

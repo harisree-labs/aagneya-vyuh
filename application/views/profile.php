@@ -38,7 +38,7 @@
         <div class="form-group">
           <label class="col-lg-3 control-label">Name: </label>
           <div class="col-lg-8">
-            <input class="form-control" name="name" value="<?php echo $name ?>" type="text" disabled>
+            <input class="form-control" name="name" value="<?php echo @$name ?>" type="text" disabled>
           </div>
         </div>
         <div class="form-group">
@@ -50,25 +50,25 @@
         <div class="form-group">
           <label class="col-lg-3 control-label">Email Id:</label>
           <div class="col-lg-8">
-            <input class="form-control" name="email" value="<?php echo $email ?>" type="text" disabled>
+            <input class="form-control" name="email" value="<?php echo @$email ?>" type="text" disabled>
           </div>
         </div>
         <div class="form-group">
           <label class="col-lg-3 control-label">Mobile No:</label>
           <div class="col-lg-8">
-            <input class="form-control" name="mobile" value="<?php echo $mobile ?>" type="text" disabled>
+            <input class="form-control" name="mobile" value="<?php echo @$mobile ?>" type="text" disabled>
           </div>
         </div>
         <div class="form-group">
           <label class="col-md-3 control-label">Semester:</label>
           <div class="col-md-8">
-            <input class="form-control" name="semester" value="<?php echo $semester ?>" type="number" disabled>
+            <input class="form-control" name="semester" value="<?php echo @$semester ?>" type="number" disabled>
           </div>
         </div>
         <div class="form-group">
           <label class="col-lg-3 control-label">Department:</label>
           <div class="col-lg-8">
-            <input class="form-control" name="branch" value="<?php echo $branch ?>" type="text" disabled>
+            <input class="form-control" name="branch" value="<?php echo @$branch ?>" type="text" disabled>
           </div>
         </div>
         <div class="form-group">
@@ -81,7 +81,7 @@
                 <option value="Pacific Time (US & Canada)">(GMT-08:00) Pacific Time (US & Canada)</option>
                 <option value="Arizona">(GMT-07:00) Arizona</option>
                 <option value="Mountain Time (US & Canada)">(GMT-07:00) Mountain Time (US & Canada)</option>
-                <option value="<?php echo $college ?>" selected="selected">(GMT-06:00) Central Time (US & Canada)</option>
+                <option value="<?php echo @$college ?>" selected="selected">(GMT-06:00) Central Time (US & Canada)</option>
                 <option value="Eastern Time (US & Canada)">(GMT-05:00) Eastern Time (US & Canada)</option>
                 <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
               </select>
@@ -91,7 +91,7 @@
         <div class="form-group">
           <label class="col-md-3 control-label">City:</label>
           <div class="col-md-8">
-            <input class="form-control" name="city" value="<?php echo $city ?>" type="text" disabled>
+            <input class="form-control" name="city" value="<?php echo @$city ?>" type="text" disabled>
           </div>
         </div>
         <div class="form-group">
