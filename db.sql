@@ -81,3 +81,5 @@ CREATE TABLE `vyuh`.`trials` (
 ) ENGINE = InnoDB;
 
 ALTER TABLE `history` CHANGE `type` `type` ENUM('LOGIN','LOGOUT','LEVELUP','OTHER') NOT NULL;
+
+ALTER TABLE `history` CHANGE `type` `type` ENUM('LOGIN','LOGOUT','LEVELUP','LOGIN_FAILED') CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
