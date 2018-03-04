@@ -13,5 +13,16 @@ class Vyuh extends CI_Controller
     function dashboard() {
     	$this->load->view('dashboard');
     }
+    
+    function css($filename){
+        
+        $org_filename = "css/";
+        $this-load->view("css/".$filename.".php");
+        
+    }
+    
+    function js(){
+        
+    }
 }
 
