@@ -52,13 +52,13 @@
                 <?php foreach ($levelData_admin as $level): ?>
                     <tr>
                         <td><?php echo $i++; ?></td>
-                        <td><?php echo $level['serial_number']; ?></td>
+                        <td><?php echo $level['level_no']; ?></td>
                         <td><?php echo $level['question']; ?></td>
                         <td><?php echo $level['answer']; ?></td>
                         <td><?php echo $level['active']; ?></td>
                         <td><?php echo $level['type']; ?></td>
-                        <td><?php echo $level['hint']; ?></td>
-                        <td><?php echo $level['hint_status']; ?></td>
+                        <td><?php echo @$level['hint']; ?></td>
+                        <td><?php echo @$level['hint_status']; ?></td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>

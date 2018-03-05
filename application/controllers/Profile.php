@@ -7,6 +7,7 @@ class Profile extends CI_Controller
         parent::__construct();
 
         $this->load->library('session');
+        $this->load->model('history');
 
         //Load dashboard model
         $this->load->model('user');
@@ -16,12 +17,21 @@ class Profile extends CI_Controller
     // retrieve available user data from db and load profile view
     public function index(){
         @$email = $this->session->userdata('email');
-        if (!$email) {
-            $userData = array();
+//        echo $email;
+        //if (!$email) {
+            //$userData = array();
             $userData = $this->user->retrieve_user_data($email);
-            // print_r($userData);
+//            print_r($userData);
             $this->load->view('profile', $userData);
-        }
+          
+            $user_history['user_id'] = $this->session->userdata('id');
+            $user_history['type'] = "PROFILE_VIEW";
+            $user_history['date'] = date("h:i:sa");
+            $user_history['current_level'] = $this->session->userdata('level');
+            $user_history['ip'] = $_SERVER['REMOTE_ADDR'];
+            $user_history['details'] = json_encode($userData);
+            $this->history->log_user_activity($user_history);
+        //}
     }
 
     // profile.js function for ajax request | update profile on db
@@ -39,6 +49,15 @@ class Profile extends CI_Controller
             $userData['city'] = $_POST['city'];
             @$userData['profile_picture'] = $_POST['profilepicture'];
             $this->user->update_profile($userData);
+            
+            $user_history['user_id'] = $this->session->userdata('id');
+            $user_history['type'] = "PROFILE_UPDATE";
+            $user_history['date'] = date("h:i:sa");
+            $user_history['current_level'] = $this->session->userdata('level');
+            $user_history['ip'] = $_SERVER['REMOTE_ADDR'];
+            $user_history['details'] = json_encode($userData);
+
+            $this->history->log_user_activity($user_history);
             //print_r($userData);
         }
     }

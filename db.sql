@@ -83,3 +83,5 @@ CREATE TABLE `vyuh`.`trials` (
 ALTER TABLE `history` CHANGE `type` `type` ENUM('LOGIN','LOGOUT','LEVELUP','OTHER') NOT NULL;
 
 ALTER TABLE `history` CHANGE `type` `type` ENUM('LOGIN','LOGOUT','LEVELUP','LOGIN_FAILED') CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
+
+ALTER TABLE `level` CHANGE `serial_number` `level_no` INT(11) NOT NULL;

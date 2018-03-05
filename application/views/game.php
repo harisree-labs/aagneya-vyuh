@@ -1,9 +1,9 @@
 <link href="/vyuh/assets/css/game.css" rel="stylesheet" id="bootstrap-css">
 
 <div class="wrap">
-  <h1>Penny's 27th<br>Treasure Hunt</h1>
+  <h1>Penny's <?php echo $level_no ?> th<br>Treasure Hunt</h1>
   <img class="mascot" src="http://nouveller.dropbox.s3.amazonaws.com/treasure.png" alt="">
-  <p>Penny! I'm your treasure hunt buddy! Find the codes and give them to me in exchange for clues.</p>
+  <p><?php echo $question ?></p>
   <form class="form" action="" method="get">
     <input class="input" type="text" placeholder="Enter your code...">
     <button class="button" type="submit">Clue plz!</button>

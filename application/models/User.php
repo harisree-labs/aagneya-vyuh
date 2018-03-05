@@ -23,23 +23,31 @@ class User extends CI_Model {
                 $this->load->database();
         }
 
-        // if user is registered, return userID | else insert available data and return False
+        // return user details and regn_status (LOGIN | SIGNUP)
         public function user_registered($data = array()) {
-            $this->db->select('id');
+            
+            $this->db->select('*');
             $this->db->from('user');
             $this->db->where(array('email'=>$data['email']));
-
-            $prevQuery = $this->db->get();
-            $prevCheck = $prevQuery->num_rows();
+            $query = $this->db->get();
             
-            if($prevCheck > 0){
-                $prevResult = $prevQuery->row_array();
-                $userID = $prevResult['id'];
+            $noOfRows = $query->num_rows();
+            
+            if($noOfRows > 0){
+                $result = $query->row_array();
+                $result['regn_status'] = TRUE;
             } else{
-              
                 $this->db->insert('user',$data);
+                
+                $this->db->select('*');
+                $this->db->from('user');
+                $this->db->where(array('email'=>$data['email']));
+                $query = $this->db->get();
+                
+                $result = $query->row_array();
+                $result['regn_status'] = FALSE;
             }
-            return $userID?$userID:FALSE;
+            return $result;
         }
 
         // update user profile on db
@@ -56,13 +64,11 @@ class User extends CI_Model {
             $this->db->from('user');
             $this->db->where(array('email'=>$email));
 
-            $prevQuery = $this->db->get();
-            $prevCheck = $prevQuery->num_rows();
+            $query = $this->db->get();
             
-            if($prevCheck > 0){
-                $userData = $prevQuery->row_array();
-                return($userData);
-            }
+            $userData = $query->row_array();
+            return $userData;
+            
         }
 
         public function get_ranklist() {

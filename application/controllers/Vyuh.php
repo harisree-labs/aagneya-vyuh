@@ -4,6 +4,7 @@ class Vyuh extends CI_Controller
 {
     function __construct() {
         parent::__construct();
+        $this->load->model('level');
     }
     
     public function index() {
@@ -15,7 +16,16 @@ class Vyuh extends CI_Controller
     }
     
     function play_game(){
-        $this->load->view('game');
+        
+        $email = $this->session->userdata('email');
+        
+        $row = $this->level->get_next_question_for_user($email);
+        
+        $data['question'] = $row->question;
+        
+        $data['level_no'] = $row->level_no;
+        
+        $this->load->view('game', $data);
     }
 }
 

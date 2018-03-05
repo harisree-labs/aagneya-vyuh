@@ -10,20 +10,22 @@ class History extends CI_Model {
         public $current_level;
         public $ip;
 
-        public function __construct($user_id,$type,$current_level,$ip)
+        public function __construct()//$user_id,$type,$current_level,$ip
         {
 
-                $this->$user_id = $user_id;
-                $this->$type = $actionS_type;
-                $this->$date = date('Y-m-d H:i:s');
-                $this->$current_level = $current_level;
-                $this->$ip = $ip;
+//                $this->$user_id = $user_id;
+//                $this->$type = $type;
+//                $this->$date = date('Y-m-d H:i:s');
+//                $this->$current_level = $current_level;
+//                $this->$ip = $ip;
 
         }
 
         public function log_user_activity($user_history){
 
-                $this->db->insert($user_history);
+                //echo "log user activity";
+                //print_r($user_history);
+                $this->db->insert('history',$user_history);
 
         }
 
