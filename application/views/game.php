@@ -4,9 +4,9 @@
   <h1>Penny's <?php echo $level_no ?> th<br>Treasure Hunt</h1>
   <img class="mascot" src="http://nouveller.dropbox.s3.amazonaws.com/treasure.png" alt="">
   <p><?php echo $question ?></p>
-  <form class="form" action="" method="get">
-    <input class="input" type="text" placeholder="Enter your code...">
-    <button class="button" type="submit">Clue plz!</button>
+  <form class="form" action="answer" method="post">
+    <input class="input" name="answer" type="text" placeholder="Enter your answer..." required>
+    <button class="button" type="submit">Submit</button>
   </form>
 </div>
 

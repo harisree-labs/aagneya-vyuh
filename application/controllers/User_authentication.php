@@ -68,7 +68,7 @@ class User_Authentication extends CI_Controller
                 
                 // If already registered
                 $userData = $this->user->user_registered($userData);
-                print_r($userData);
+                //print_r($userData);
                 if($userData['regn_status']) {//['email']
 
                     $user_history['user_id'] = $userData['id'];
@@ -107,7 +107,7 @@ class User_Authentication extends CI_Controller
     }
 
     public function logout() {
-        $user_history['user_id'] = 0;
+        $user_history['user_id'] = $this->session->userdata('id');
         $user_history['type'] = "LOGOUT";
         $user_history['date'] = date("h:i:sa");
         $user_history['current_level'] = "0";

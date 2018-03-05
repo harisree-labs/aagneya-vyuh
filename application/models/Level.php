@@ -34,13 +34,27 @@ class Level extends CI_Model {
         
         public function get_next_question_for_user($email){
             
-            $sql = "SELECT level_no,question FROM `user` `u` JOIN `level` `l` ON `u`.`level`+1 = `l`.`id` WHERE `u`.`email` = '$email' ";
+            $sql = "SELECT level_no,question FROM `user` `u` JOIN `level` `l` ON `u`.`level`+1 = `l`.`level_no` WHERE `u`.`email` = '$email' ";
             
             $query = $this->db->query($sql, array($email));
             
             $row = $query->row();
             
+            print_r($row);
+            
             return $row;
+            
+        }
+        
+        public function get_next_answer_for_user($email){
+            
+            $sql = "SELECT answer FROM `user` `u` JOIN `level` `l` ON `u`.`level`+1 = `l`.`level_no` WHERE `u`.`email` = '$email' ";
+            
+            $query = $this->db->query($sql, array($email));
+            
+            $answer = $query->row();
+            
+            return $answer;
             
         }
 

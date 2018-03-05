@@ -85,6 +85,13 @@ class User extends CI_Model {
 
             
         }
+        
+        public function level_up($data = array()) {
+            $email = $this->session->userdata('email');
+            $this->db->where('email', $email);
+            $this->db->update('user', $data);
+            return true;
+        }
 
 
 }
