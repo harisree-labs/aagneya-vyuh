@@ -125,7 +125,7 @@ class User_Authentication extends CI_Controller
         // echo $this->session->userdata('email');
 
         // Redirect to login page
-        redirect('/user_authentication');
+        //redirect('/user_authentication');
     }
 
 }

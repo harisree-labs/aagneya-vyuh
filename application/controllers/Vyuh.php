@@ -7,11 +7,16 @@ class Vyuh extends CI_Controller
         $this->load->model('level');
         $this->load->model('history');
         $this->load->model('user');
+        
+//        $user_history['user_id'] = $this->session->userdata('id');
+//        $user_history['current_level'] = $this->session->userdata('level');
+//        $user_history['date'] = date("h:i:sa");
+//        $user_history['ip'] = $_SERVER['REMOTE_ADDR'];
     }
     
     public function index() {
-		$this->load->view('dashboard');
-	}
+        $this->load->view('dashboard');
+    }
 
     function dashboard() {
     	$this->load->view('dashboard');
@@ -22,15 +27,13 @@ class Vyuh extends CI_Controller
         $email = $this->session->userdata('email');
         
         $data = $this->level->get_next_question_for_user($email);
-        
-        //$data['question'] = $row->question;
-        //$data['level_no'] = $row->level_no;
 
         $user_history['user_id'] = $this->session->userdata('id');
-        $user_history['type'] = "PLAY_GAME";
-        $user_history['date'] = date("h:i:sa");
         $user_history['current_level'] = $this->session->userdata('level');
+        $user_history['date'] = date("h:i:sa");
         $user_history['ip'] = $_SERVER['REMOTE_ADDR'];
+        
+        $user_history['type'] = "PLAY_GAME";
         $user_history['details'] = json_encode($data);
 
         $this->history->log_user_activity($user_history);
