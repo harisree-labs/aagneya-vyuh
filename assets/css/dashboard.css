@@ -1,3 +1,7 @@
+.box-view {
+	padding-top: 100px;
+}
+
 html,body {
     background-color: black !important;
 }

@@ -17,7 +17,7 @@ class Dashboard extends CI_Controller
     public function index(){
         $email = $this->session->userdata('email');
         if ($email) {
-            $this->load->view('dashboard');
+            $this->load->view('user/dashboard');
         }
     }
     

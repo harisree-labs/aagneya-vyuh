@@ -21,7 +21,7 @@ class User_Authentication extends CI_Controller
 
     public function index(){
 
-        echo "session: ",$this->session->userdata('email');
+        //echo "session: ",$this->session->userdata('email');
         if(!$this->session->userdata('email')) {
             //echo $this->config->item('facebook_app_id');
 
@@ -35,7 +35,9 @@ class User_Authentication extends CI_Controller
             $permissions = ['email']; // Optional permissions
             $loginUrl = $helper->getLoginUrl('http://localhost/vyuh/index.php/user_authentication/login', $permissions);
 
-            echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
+            //echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
+            $loginURL['loginURL'] = htmlspecialchars($loginUrl);
+            $this->load->view('user/login', $loginURL);
         } else {
             redirect('http://localhost/vyuh/index.php/dashboard', 'location');
         }
