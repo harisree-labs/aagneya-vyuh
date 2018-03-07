@@ -11,6 +11,8 @@ class Profile extends CI_Controller
 
         //Load dashboard model
         $this->load->model('user');
+        
+        $this->load->helper('url');
 
     }
 
@@ -18,7 +20,7 @@ class Profile extends CI_Controller
     public function index(){
         @$email = $this->session->userdata('email');
 //        echo $email;
-        //if (!$email) {
+        if ($email) {
             //$userData = array();
             $userData = $this->user->retrieve_user_data($email);
 //            print_r($userData);
@@ -31,7 +33,9 @@ class Profile extends CI_Controller
             $user_history['ip'] = $_SERVER['REMOTE_ADDR'];
             $user_history['details'] = json_encode($userData);
             $this->history->log_user_activity($user_history);
-        //}
+        } else{
+            redirect('http://localhost/vyuh/index.php/user_authentication', 'location');
+        }
     }
 
     // profile.js function for ajax request | update profile on db

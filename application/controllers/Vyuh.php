@@ -7,6 +7,7 @@ class Vyuh extends CI_Controller
         $this->load->model('level');
         $this->load->model('history');
         $this->load->model('user');
+        $this->load->helper('url');
         
 //        $user_history['user_id'] = $this->session->userdata('id');
 //        $user_history['current_level'] = $this->session->userdata('level');
@@ -15,16 +16,19 @@ class Vyuh extends CI_Controller
     }
     
     public function index() {
-        $this->load->view('dashboard');
+        //$this->load->view('user/login');
+        redirect('http://localhost/vyuh/index.php/user_authentication', 'location');
     }
 
     function dashboard() {
-    	$this->load->view('dashboard');
+    	$this->load->view('user/dashboard');
     }
     
     function play_game(){
         
         $email = $this->session->userdata('email');
+        
+        if ($email) {
         
         $data = $this->level->get_next_question_for_user($email);
 
@@ -38,7 +42,12 @@ class Vyuh extends CI_Controller
 
         $this->history->log_user_activity($user_history);
         
+//        $this->load->view('user/game');
         $this->load->view('game', $data);
+        
+        } else{
+            redirect('http://localhost/vyuh/index.php/user_authentication', 'location');
+        }
         
 
     }

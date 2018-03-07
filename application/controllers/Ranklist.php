@@ -10,6 +10,7 @@ class Ranklist extends CI_Controller
 
         //Load dashboard model
         $this->load->model('user');
+        $this->load->helper('url');
 
     }
 
@@ -24,6 +25,8 @@ class Ranklist extends CI_Controller
 
             $this->load->view('user/ranklist', $data);
             //echo "session: ",$this->session->userdata('email');
+        } else{
+            redirect('http://localhost/vyuh/index.php/user_authentication', 'location');
         }
 
     }

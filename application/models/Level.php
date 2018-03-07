@@ -40,7 +40,7 @@ class Level extends CI_Model {
             
             $row = $query->row();
             
-            print_r($row);
+//            print_r($row);
             
             return $row;
             

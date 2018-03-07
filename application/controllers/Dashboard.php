@@ -8,6 +8,8 @@ class Dashboard extends CI_Controller
 
         $this->load->library('session');
 
+        $this->load->helper('url');
+
         //Load dashboard model
         //$this->load->model('dashboard');
 
@@ -16,9 +18,14 @@ class Dashboard extends CI_Controller
     // Load Dashboard view
     public function index(){
         $email = $this->session->userdata('email');
+        //echo $email;
         if ($email) {
             $this->load->view('user/dashboard');
+        } else {
+            redirect('http://localhost/vyuh/index.php/user_authentication', 'location');
         }
+
+        //redirect('http://localhost/vyuh/index.php/user_authentication', 'location');
     }
     
 }

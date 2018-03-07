@@ -16,16 +16,9 @@
 <div class="container" style="padding-top: 5px;">
   <h1 class="page-header">Profile</h1>
   <div class="row">
-    <!-- left column -->
-    <div class="col-md-4 col-sm-6 col-xs-12">
-      <div class="text-center">
-        <img src="http://lorempixel.com/200/200/people/9/" class="avatar img-circle img-thumbnail" alt="avatar">
-        <h6 class="display-profile">Upload a different photo...</h6>
-        <input class="display-profile avatar-upload" type="file" class="text-center center-block well well-sm">
-      </div>
-    </div>
+      
     <!-- edit form column -->
-    <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+    <div class="col-md-offset-2 col-md-8 col-sm-offset-3 col-sm-6 col-xs-12 personal-info">
       <div class="alert alert-info alert-dismissable">
         <a class="panel-close close" data-dismiss="alert">×</a> 
         <i class="fa fa-coffee"></i>

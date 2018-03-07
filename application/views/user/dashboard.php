@@ -9,7 +9,7 @@
 
 <title>VYUH | AAGNEYA</title>
 
-<link rel="icon" href="http://logicsforest.com/themeforest/zoonx/images/favicon.png" type="image/x-icon">
+<!--<link rel="icon" href="http://logicsforest.com/themeforest/zoonx/images/favicon.png" type="image/x-icon">-->
 <link rel="stylesheet" type="text/css" href="/vyuh/css/master.css">
 <link rel="stylesheet" type="text/css" href="/vyuh/css/style.css">
 <!-- <link rel="stylesheet" type="text/css" href="css/settings.css"> -->
@@ -40,20 +40,20 @@
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <i class="fa fa-bars"></i> </button>
 				<a class="navbar-brand" href="http://logicsforest.com/themeforest/zoonx/index.html">
-           <img src="images/mobile_logo.png" class="logo logo-display" alt="">
-           <img src="images/logo_2.png" class="logo logo-scrolled" alt="">
+           <img src="/vyuh/images/mobile_logo.png" class="logo logo-display" alt="">
+           <img src="/vyuh/images/logo_2.png" class="logo logo-scrolled" alt="">
         </a>
 			</div>
 			<!-- End Header Navigation -->
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="scroll"><a href="index.html#header-1">Home</a> </li>
-					<li class="scroll"><a href="index.html#aboutus">Profile</a> </li>
-					<li class="scroll"><a href="index.html#gallery">Game</a> </li>
-					<li class="scroll"><a href="index.html#pricing_table">Rank List</a> </li>
-					<li class="scroll"><a href="index.html#latest_news">Rules</a> </li>
-					<li class="scroll"><a href="index.html#contact_us">How to Play</a> </li>
-					<li class="scroll"><a href="index.html#contact_us">Logout</a> </li>
+					<li class="scrol"><a href="/vyuh">Home</a> </li>
+					<li class="scrol"><a href="/vyuh/index.php/profile">Profile</a> </li>
+					<li class="scrol"><a href="/vyuh/index.php/vyuh/play_game">Game</a> </li>
+					<li class="scrol"><a href="/vyuh/index.php/ranklist">Rank List</a> </li>
+					<li class="scrol"><a href="/vyuh/index.php/rules">Rules</a> </li>
+					<li class="scrol"><a href="/vyuh/index.php/how_to_play">How to Play</a> </li>
+					<li class="scrol"><a href="/user_authentication/logout">Logout</a> </li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -70,12 +70,12 @@
 					<i class="glyphicon glyphicon-cloud"></i>
 				</div>
 				<div class="dash-box-body">
-					<span class="dash-box-count">8,252</span>
-					<span class="dash-box-title">Lesson Plan</span>
+					<span class="dash-box-count">#1</span>
+					<span class="dash-box-title">Accuracy : </span>
 				</div>
 				
 				<div class="dash-box-action">
-					<button>More Info</button>
+					<button>Rank</button>
 				</div>				
 			</div>
 		</div>
@@ -85,12 +85,12 @@
 					<i class="glyphicon glyphicon-download"></i>
 				</div>
 				<div class="dash-box-body">
-					<span class="dash-box-count">100</span>
-					<span class="dash-box-title">Learning Resources</span>
+					<span class="dash-box-count">1</span>
+					<span class="dash-box-title">Remaining Levels : </span>
 				</div>
 				
 				<div class="dash-box-action">
-					<button>More Info</button>
+					<button>Level</button>
 				</div>				
 			</div>
 		</div>
@@ -100,17 +100,37 @@
 					<i class="glyphicon glyphicon-heart"></i>
 				</div>
 				<div class="dash-box-body">
-					<span class="dash-box-count">2502</span>
-					<span class="dash-box-title">Enrichment Content</span>
+					<span class="dash-box-count">50%</span>
+					<span class="dash-box-title">You are a Novice</span>
 				</div>
 				
 				<div class="dash-box-action">
-					<button>More Info</button>
+					<button>Progress</button>
 				</div>				
 			</div>
 		</div>
 	</div>
 </div>
+
+
+<!-- Offer Start -->
+<div class="container offer_section padding_top20 padding_bottom20">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-4 col-xs-12">
+				<div class="offer_image"> <img src="/vyuh/images/website-cost-cta-image.png" alt="image"> </div>
+			</div>
+			<div class="col-md-8 col-sm-8 col-xs-12">
+				<div class="offer_text text-center">
+                                    <h2>Are you ready to be success?</h2></br>
+					<a href="vyuh/play_game" class="btn-light"> Let's Play :) </a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Offer end -->
+
 
 
 <script src="/vyuh/js/jquery.2.2.3.min.js"></script>

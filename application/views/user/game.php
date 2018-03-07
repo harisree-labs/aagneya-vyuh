@@ -56,54 +56,7 @@
 <!-- Header Start -->
 
 	
-
-<!--Main Slider-->
-<div id="rev-slider" class="rev_slider" data-version="5.0">
-	<ul>
-
-		<!-- SLIDE - 1 -->
-		<li data-transition="fade"><img src="/vyuh/images/bannar_2.jpg" alt="" data-bgposition="center center" data-bgfit="cover">
-			<!-- LAYER NR. 1 -->
-			<h1 class="tp-caption tp-resizeme text-center" 
-            data-x="center" 
-            data-y="280" 
-            data-width="full" 
-            data-transform_idle="o:1;" 
-            data-transform_in="y:[-200%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;" 
-            data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;" 
-            data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" 
-            data-mask_out="x:0;y:0;s:inherit;e:inherit;" 
-            data-start="700">Beautifuly crafted world class
-      		</h1>
-			<!-- LAYER NR. 2 -->
-			<h1 class="tp-caption tp-resizeme text-center" 
-            data-x="center" 
-            data-y="360" 
-            data-width="full" 
-            data-transform_idle="o:1;" 
-            data-transform_in="y:[-200%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;" 
-            data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;" 
-            data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" 
-            data-mask_out="x:0;y:0;s:inherit;e:inherit;" 
-            data-start="500">
-          	<span class="color_red text_bold">digital experiences</span> 
-      		</h1>
-			<!-- LAYER NR. 4 -->
-			<div class="tp-caption  tp-resizeme text-center" 
-            data-x="center" data-y="470" 
-            data-width="full" 
-            data-transform_idle="o:1;" 
-            data-transform_in="y:[-200%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;" 
-            data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;" 
-            data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" 
-            data-mask_out="x:0;y:0;s:inherit;e:inherit;" 
-            data-start="1500"> 
-            <a href="<?php echo $loginURL; ?>" class="btn-dark">Login With Facebook</a>
-            </div>
-		</li>
-	</ul>
-</div>
-<!--Main Slider ends -->	
+	
 	
 
 

@@ -20,6 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('dashboard');
+            $this->load->helper('url');
+            redirect('http://localhost/vyuh/index.php/user_authentication', 'location');
 	}
 }

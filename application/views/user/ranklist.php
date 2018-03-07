@@ -1,12 +1,12 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
-<link href="http://localhost/vyuhcss/ranklist.css" rel="stylesheet" id="bootstrap-css">
+<link href="/vyuh/assets/css/ranklist.css" rel="stylesheet" id="bootstrap-css">
 
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-<script src="http://localhost/vyuhcss/ranklist.js"></script>
+<script src="/vyuh/assets/js/ranklist.js"></script>
 
 <!-- Include the above in your HEAD tag -->
 
