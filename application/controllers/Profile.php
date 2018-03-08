@@ -24,11 +24,12 @@ class Profile extends CI_Controller
             //$userData = array();
             $userData = $this->user->retrieve_user_data($email);
 //            print_r($userData);
-            $this->load->view('profile', $userData);
+            $this->load->view('user/header');
+            $this->load->view('user/profile', $userData);
           
             $user_history['user_id'] = $this->session->userdata('id');
             $user_history['type'] = "PROFILE_VIEW";
-            $user_history['date'] = date("h:i:sa");
+            $user_history['date'] = date("Y-m-d H:i:s");
             $user_history['current_level'] = $this->session->userdata('level');
             $user_history['ip'] = $_SERVER['REMOTE_ADDR'];
             $user_history['details'] = json_encode($userData);

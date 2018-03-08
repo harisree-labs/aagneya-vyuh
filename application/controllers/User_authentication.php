@@ -12,7 +12,7 @@ class User_Authentication extends CI_Controller
         //Load user model
         $this->load->model('user');
         $this->load->model('history');
-        // $this->load->model('history');
+//        $this->load->model('level');
 
         $this->config->load('facebook');
 
@@ -53,6 +53,7 @@ class User_Authentication extends CI_Controller
         }else {
 
             $userData = array();
+//            $userData['total_levels'] = $this->level->get_total_levels();
 
             // Check if user is logged in
             if($this->facebook->is_authenticated()){

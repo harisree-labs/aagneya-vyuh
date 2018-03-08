@@ -43,6 +43,7 @@ class Vyuh extends CI_Controller
         $this->history->log_user_activity($user_history);
         
 //        $this->load->view('user/game');
+        $this->load->view('user/header');
         $this->load->view('game', $data);
         
         } else{
@@ -73,6 +74,7 @@ class Vyuh extends CI_Controller
             $level = $this->session->userdata('level');
             $this->session->set_userdata('level',$level+1);
             $userData['level'] = $this->session->userdata('level');
+            $userData['level_pass_time'] = date("Y-m-d H:i:s");
             $this->user->level_up($userData);
             $user_history['type'] = "LEVEL_UP";
             $user_history['current_level'] = $userData['level'];

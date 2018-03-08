@@ -1,7 +1,7 @@
 <link href="/vyuh/assets/css/game.css" rel="stylesheet" id="bootstrap-css">
 
 <div class="wrap">
-  <h1>Penny's <?php echo $level_no ?> th<br>Treasure Hunt</h1>
+  <h1>Quest <?php echo $level_no ?><br></h1>
   <img class="mascot" src="http://nouveller.dropbox.s3.amazonaws.com/treasure.png" alt="">
   <p><?php echo $question ?></p>
   <form class="form" action="answer" method="post">

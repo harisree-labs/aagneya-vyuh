@@ -22,7 +22,7 @@ class Ranklist extends CI_Controller
              $data['ranklist'] = $this->user->get_ranklist();
 
             // print_r($data['ranklist']);
-
+            $this->load->view('user/header');
             $this->load->view('user/ranklist', $data);
             //echo "session: ",$this->session->userdata('email');
         } else{

@@ -86,6 +86,19 @@ class User extends CI_Model {
             
         }
         
+        public function get_rank() {
+            $userData['level'] = $this->session->userdata('level');
+            $userData['level_pass_time'] = $this->session->userdata('level_pass_time');
+            $this->db->select('*');
+            $this->db->from('user');
+            $this->db->where("level >", $userData['level']);
+            $this->db->where("level_pass_time <", $userData['level_pass_time']);
+            $query = $this->db->get();
+
+            $result = $query->num_rows();
+            return $result + 1;
+        }
+        
         public function level_up($data = array()) {
             $email = $this->session->userdata('email');
             $this->db->where('email', $email);

@@ -1,6 +1,11 @@
-.avatar-upload {
-	margin-left: 40px;
-	padding-bottom: 5px;
+.control-label {
+	color: white;
+	text-align: left !important;
+	margin-left: 60px;
+}
+
+.profile-title {
+	color: beige;
 }
 .display-profile {
 	visibility: hidden;
