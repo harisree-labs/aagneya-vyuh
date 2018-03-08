@@ -35,7 +35,7 @@ class Profile extends CI_Controller
             $user_history['details'] = json_encode($userData);
             $this->history->log_user_activity($user_history);
         } else{
-            redirect('http://localhost/vyuh/index.php/user_authentication', 'location');
+            redirect('user_authentication', 'location');
         }
     }
 

@@ -7,13 +7,23 @@ and open the template in the editor.
     Created on : 4 Mar, 2018, 5:46:12 PM
     Author     : sreehari
 */
+.wrap h1 {
+    font-family: 'Audiowide', cursive;
+}
+.wrap p {
+  padding-top: 10px;
+  color: beige !important;
+  font-family: 'Chewy', cursive;
+  font-size: 16px;
+  line-height: 24px;
+}
 
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-html {
+/*html {
   font-size: 62.5%;
 }
 
@@ -21,7 +31,7 @@ body {
   font-family: 'Chewy', cursive;
   font-size: 1.6em;
   line-height: 1.5;
-}
+}*/
 
 h1 {
   color: #FE8804;
@@ -34,7 +44,8 @@ img {
 }
 
 .wrap {
-  max-width: 320px;
+  margin-top : -40px !important;
+  max-width: 500px;
   margin: 0 auto;
   padding: 0 0 2em;
 }
@@ -61,13 +72,13 @@ img {
 
 .button {
   border: none;
-  background: #47BFFE;
+  background: #0074B1;
   display: block;
   width: 100%;
   padding: 0 1em;
   font: inherit;
   border-radius: 10px;
-  color: #175C9A;
+  color: white;
   font-size: 1.5em;
   line-height: 2;
   text-decoration: none;

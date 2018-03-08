@@ -1,3 +1,9 @@
+/** {
+    font-family: 'Oxygen', cursive;
+}*/
+.trow {
+    font-family: 'Oxygen', cursive;
+}
 .filterable {
     margin-top: 15px;
 }
@@ -21,4 +27,32 @@
 .filterable .filters input[disabled]:-ms-input-placeholder {
     color: #333;
 }
+.panel-heading{
+    background-color: #1f2429 !important;
+    border-color: #1f2429 !important;
+}
+.panel-title{
+    font-family: 'Audiowide', cursive;
+}
+.table {
+    color: aliceblue;
+    border-top: none !important;
+}
+.ranklist {
+    color: beige;
+    font-family: 'Audiowide', cursive;
+}
+.theader {
+    color: green !important;
+    font-family: 'Audiowide', cursive;
+}
 
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 16px !important;
+    }
+
+/*@media screen and (min-width: 480px) {
+  .hidemob {
+    display: none;
+  }
+}*/

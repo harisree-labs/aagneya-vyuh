@@ -2,7 +2,7 @@
 
 <div class="wrap">
   <h1>Quest <?php echo $level_no ?><br></h1>
-  <img class="mascot" src="http://nouveller.dropbox.s3.amazonaws.com/treasure.png" alt="">
+  <img class="mascot" src="https://images.pexels.com/photos/681390/pexels-photo-681390.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="">
   <p><?php echo $question ?></p>
   <form class="form" action="answer" method="post">
     <input class="input" name="answer" type="text" placeholder="Enter your answer..." required>
@@ -10,12 +10,12 @@
   </form>
 </div>
 
-<div class="modal">
+<!--<div class="modal">
   <div class="modal__container">
     <h2 class="modal__heading"></h2>
     <p class="modal__text"></p>
     <a href="#" class="button modal__close">Close</a>
   </div>
-</div>
+</div>-->
 
 <script src="/vyuh/assets/js/game.js"></script>

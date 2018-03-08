@@ -37,6 +37,7 @@ class User_Authentication extends CI_Controller
 
             //echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
             $loginURL['loginURL'] = htmlspecialchars($loginUrl);
+            $this->load->view('user/header');
             $this->load->view('user/login', $loginURL);
         } else {
             redirect('http://localhost/vyuh/index.php/dashboard', 'location');

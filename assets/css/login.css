@@ -1,0 +1,87 @@
+body {
+  background: #333 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAE0lEQVQIW2NkYGD4D8SMjEACDAAOKQEDKKNmJgAAAABJRU5ErkJggg==) repeat;
+  /*padding-top: 150px;*/
+  font: normal 100%/1.5 Arial;
+  color: white;
+  text-align: center;
+}
+.main {
+	padding-top: 150px;
+}
+.shares {
+  padding-top: 20px;
+}
+
+.facebook {
+  border: 1px solid #2e457b;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 0 #8393ba;
+  color: white;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: bold;
+  background-color: #4C66A4;
+  background-image: -webkit-linear-gradient(#4C66A4, #324b86);
+  background-image: linear-gradient(#4C66A4, #324b86);
+  padding: 7px 18px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #243a70;
+  background-clip: padding-box;
+  font-size: 1.125em;
+}
+.facebook:hover:not(:disabled) {
+  background-color: #485d8e;
+  background-image: -webkit-linear-gradient(#485d8e, #2f457a);
+  background-image: linear-gradient(#485d8e, #2f457a);
+  box-shadow: inset 0 1px 0 0 #6076a9;
+  cursor: pointer;
+  color: aliceblue;
+  text-decoration: none;
+}
+.facebook:active:not(:disabled), .facebook:focus:not(:disabled) {
+  border: 1px solid #2e457b;
+  box-shadow: inset 0 0 8px 4px #2b3f6e, inset 0 0 8px 4px #2b3f6e;
+}
+.facebook:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+
+
+/*.writeup {
+    position: fixed;
+    top:  50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 360px;
+}*/
+
+#writeup1 {
+	color: #FE8804;;
+	font-size: 45px;
+	font-family: Chewy;
+    /*position: absolute;*/
+    text-align: center !important;
+}
+
+@media only screen and (max-width: 600px) {
+    #writeup1 {
+        font-size: 25px;
+    }
+}
+
+/*#writeup3 {
+	padding-top: 50px;
+}
+*/
+
+
+
+
+
+
+
+
+
+
