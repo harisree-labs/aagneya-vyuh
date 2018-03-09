@@ -33,14 +33,14 @@ class User_Authentication extends CI_Controller
 
             $helper = $fb->getRedirectLoginHelper();
             $permissions = ['email']; // Optional permissions
-            $loginUrl = $helper->getLoginUrl('http://localhost/vyuh/index.php/user_authentication/login', $permissions);
+            $loginUrl = $helper->getLoginUrl('http://aagneyavyuh.co.in/vyuh/index.php/user_authentication/login', $permissions);
 
             //echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
             $loginURL['loginURL'] = htmlspecialchars($loginUrl);
             $this->load->view('user/header');
             $this->load->view('user/login', $loginURL);
         } else {
-            redirect('http://localhost/vyuh/index.php/dashboard', 'location');
+            redirect('dashboard', 'location');
         }
     }
 
@@ -50,7 +50,7 @@ class User_Authentication extends CI_Controller
         if($this->session->userdata('email')) {
             echo $this->session->userdata('email');
             echo "<br>logged in already | Login</br>";
-            redirect('http://localhost/vyuh/index.php/dashboard', 'location');
+            redirect('dashboard', 'location');
         }else {
 
             $userData = array();
@@ -84,7 +84,7 @@ class User_Authentication extends CI_Controller
                     $this->history->log_user_activity($user_history);
 
                     $this->session->set_userdata($userData);
-                    redirect('http://localhost/vyuh/index.php/dashboard', 'location');
+                    redirect('dashboard', 'location');
 
             } else {
                 $user_history['user_id'] = $userData['id'];
@@ -96,7 +96,7 @@ class User_Authentication extends CI_Controller
                 $this->history->log_user_activity($user_history);
                 
                 $this->session->set_userdata($userData);
-                redirect('http://localhost/vyuh/index.php/profile', 'location');
+                redirect('profile', 'location');
             }
             
             }else{

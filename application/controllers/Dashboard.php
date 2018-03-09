@@ -42,7 +42,7 @@ class Dashboard extends CI_Controller
             $this->load->view('user/header');
             $this->load->view('user/dashboard', $data);
         } else {
-            redirect('http://localhost/vyuh/index.php/user_authentication', 'location');
+            redirect('user_authentication', 'location');
         }
 
         //redirect('http://localhost/vyuh/index.php/user_authentication', 'location');

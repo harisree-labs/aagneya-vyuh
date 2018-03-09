@@ -17,7 +17,7 @@ class Vyuh extends CI_Controller
     
     public function index() {
         //$this->load->view('user/login');
-        redirect('http://localhost/vyuh/index.php/user_authentication', 'location');
+        redirect('user_authentication', 'location');
     }
 
     function dashboard() {
@@ -47,7 +47,7 @@ class Vyuh extends CI_Controller
         $this->load->view('game', $data);
         
         } else{
-            redirect('http://localhost/vyuh/index.php/user_authentication', 'location');
+            redirect('user_authentication', 'location');
         }
         
 

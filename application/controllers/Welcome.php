@@ -21,6 +21,6 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
             $this->load->helper('url');
-            redirect('http://localhost/vyuh/index.php/user_authentication', 'location');
+            redirect('user_authentication', 'location');
 	}
 }
