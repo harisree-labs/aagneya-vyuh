@@ -53,7 +53,7 @@ class History extends CI_Model {
 
             $result = $query->num_rows();
             $accuracy = ($userData['level'] / $result) * 100;
-            return $accuracy;
+            return substr($accuracy,0,4);
 
         }
 

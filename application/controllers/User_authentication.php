@@ -33,7 +33,7 @@ class User_Authentication extends CI_Controller
 
             $helper = $fb->getRedirectLoginHelper();
             $permissions = ['email']; // Optional permissions
-            $loginUrl = $helper->getLoginUrl('http://54.39.23.48/vyuh/index.php/user_authentication/login', $permissions);
+            $loginUrl = $helper->getLoginUrl('http://127.0.0.1/vyuh/index.php/user_authentication/login', $permissions);
 
             //echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
             $loginURL['loginURL'] = htmlspecialchars($loginUrl);

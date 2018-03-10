@@ -16,7 +16,7 @@ $(document).ready(function() {
 		} else {
 			$.ajax({
     			type: "POST",
-    			url: "http://localhost/vyuh/index.php/profile/profile_update1",
+    			url: "http://localhost/vyuh/index.php/manage_levels/add",
     			data: data,
     			success: function(response)
     			{

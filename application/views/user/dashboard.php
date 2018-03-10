@@ -13,7 +13,7 @@
 				</div>
 				<div class="dash-box-body">
 					<span class="dash-box-count">#<?php echo $rank; ?></span>
-					<span class="dash-box-title">Accuracy : <?php echo $accuracy; ?></span>
+					<span class="dash-box-title">Accuracy : <?php echo $accuracy; ?>%</span>
 				</div>
 				
 				<div class="dash-box-action">

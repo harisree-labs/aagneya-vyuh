@@ -29,15 +29,15 @@ class Manage_levels extends CI_Controller
         $email = $this->session->userdata('email');
         if ($email) {
             $levelData = array();
-            $levelData['serial_number'] = $_POST['name'];
-            $levelData['question'] = $_POST['name'];
-            $levelData['answer'] = $_POST['name'];
-            $levelData['active'] = $_POST['name'];
-            $levelData['type'] = $_POST['name'];
-            @$levelData['hint'] = $_POST['name'];
-            @$levelData['hint_status'] = $_POST['name'];
+            @$levelData['serial_number'] = $_POST['serial_number'];
+            @$levelData['question'] = $_POST['question'];
+            @$levelData['answer'] = $_POST['answer'];
+            @$levelData['active'] = $_POST['active'];
+            @$levelData['type'] = $_POST['type'];
+            //@$levelData['hint'] = $_POST['hint'];
+            //@$levelData['hint_status'] = $_POST['hint_status'];
 
-            $this->user->add_level_data_admin($levelData);
+            $this->level->add_level_data_admin($levelData);
             //print_r($userData);
         }
     }
