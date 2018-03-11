@@ -41,23 +41,7 @@ class History extends CI_Model {
 
         }
         
-        public function get_accuracy(){
-            $userData['id'] = $this->session->userdata('id');
-            $userData['level'] = $this->session->userdata('level');
-            
-            $this->db->select('*');
-            $this->db->from('history');
-            $this->db->where("type", "INPUT_ANSWER");
-            $this->db->where("user_id", $userData['id']);
-            $query = $this->db->get();
-
-            $result = $query->num_rows();
-            $accuracy = ($userData['level'] / $result) * 100;
-            return substr($accuracy,0,4);
-
-        }
-
-
+        
         public function get_all_logs(){
 
 

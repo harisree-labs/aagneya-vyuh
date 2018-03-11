@@ -32,7 +32,7 @@
 			<!-- Start Header Navigation -->
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <i class="fa fa-bars"></i> </button>
-				<a class="navbar-brand" href="http://logicsforest.com/themeforest/zoonx/index.html">
+				<a class="navbar-brand" href="">
            <img src="images/mobile_logo.png" class="logo logo-display" alt="">
            <img src="images/logo_2.png" class="logo logo-scrolled" alt="">
         </a>

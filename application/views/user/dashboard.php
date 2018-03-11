@@ -13,7 +13,7 @@
 				</div>
 				<div class="dash-box-body">
 					<span class="dash-box-count">#<?php echo $rank; ?></span>
-					<span class="dash-box-title">Accuracy : <?php echo $accuracy; ?>%</span>
+					<span class="dash-box-title">Accuracy : <?php echo $accuracy; ?></span>
 				</div>
 				
 				<div class="dash-box-action">
@@ -64,8 +64,8 @@
 			</div>
 			<div class="col-md-8 col-sm-8 col-xs-12">
 				<div class="offer_text text-center">
-                                    <h2>Are you ready to be success?</h2></br>
-					<a href="vyuh/play_game" class="btn-light"> Let's Play :) </a>
+                                    <h2>Are you ready to play?</h2></br>
+					<a href="vyuh/game" class="btn-light"> Let's Play :) </a>
 				</div>
 			</div>
 		</div>

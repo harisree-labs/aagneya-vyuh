@@ -1,17 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins");
-
-* {
-  box-sizing: border-box;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  font-family: 'Poppins', serif;
-}
-
-body {
-  background: #fff;
-  color: #fff;
-}
-
 #writeup1 {
 	color: #FE8804;;
 	font-size: 45px;
@@ -24,6 +10,30 @@ body {
     #writeup1 {
         font-size: 25px;
     }
+}
+
+#header {
+    padding-bottom: 0px !important;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  margin: 0px;
+  list-style: none;
+  padding: 0px;
+  line-height: 2em;
+}
+
+li {
+  cursor: pointer;
+}
+
+li:hover {
+  color: dodgerblue;
 }
 
 #login {
@@ -42,26 +52,6 @@ body {
   height: 100vh;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  margin: 0px;
-  list-style: none;
-  padding: 0px;
-  line-height: 2em;
-  padding: 20px 0;
-}
-
-li {
-  cursor: pointer;
-}
-
-li:hover {
-  color: dodgerblue;
-}
 
 button {
   border: 2px solid #fff;
@@ -82,14 +72,6 @@ button:hover {
 
 .description {
   text-align: center;
-}
-
-.logo {
-  position: absolute;
-  top: 31px;
-  left: 31px;
-  max-width: 120px;
-  background: rgba(0, 0, 0, 0.1);
 }
 
 .benefits {
@@ -134,7 +116,4 @@ button:hover {
     display: block;
   }
 
-  .logo {
-    max-width: 180px;
-  }
 }

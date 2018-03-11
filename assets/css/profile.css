@@ -15,9 +15,7 @@
 .display-none {
 	display: none;
 }
-.control-label {
-	font-family: 'Audiowide', cursive;
-}
+
 .alert-info {
 	color: beige !important;
 	background-color: #134154 !important;

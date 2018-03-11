@@ -1,0 +1,28 @@
+.input {
+  text-align: center;
+  -webkit-appearance: none;
+  width: 70%;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 10px;
+  border: solid 6px black;
+}
+
+.button {
+  border: none;
+  background: #0074B1;
+  width: 25%;
+  padding: 0 1em;
+  font: inherit;
+  border-radius: 25px;
+  color: white;
+  font-size: 1.5em;
+  line-height: 2;
+  text-decoration: none;
+  text-align: center;
+}
+.alert-info {
+	color: beige !important;
+	background-color: #134154 !important;
+	border-color: #134154 !important;
+}

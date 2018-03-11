@@ -12,6 +12,14 @@ class Ranklist extends CI_Controller
         $this->load->model('user');
         $this->load->helper('url');
 
+        @$email = $this->session->userdata('email');
+        @$college = $this->session->userdata('college');
+        if (!$email) {
+            redirect('user_authentication', 'location');
+        }
+        if (!$college) {
+            redirect('profile', 'location');
+        }
     }
 
     // Load Ranklist view

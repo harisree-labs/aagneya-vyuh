@@ -86,7 +86,6 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="col-md-3 control-label"></label>
           <div class="col-md-8">
             <input id="edit" class="btn btn-primary" value="Edit" type="button">
             <input id="save" class="display-profile btn btn-primary" value="Submit" type="button">

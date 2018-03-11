@@ -75,6 +75,7 @@ class User extends CI_Model {
             $this->db->select('*');
             $this->db->from('user');
             $this->db->order_by("level", "desc");
+            $this->db->order_by("level_pass_time", "asc");
             $this->db->limit(50);
 
             $query = $this->db->get();
@@ -92,11 +93,18 @@ class User extends CI_Model {
             $this->db->select('*');
             $this->db->from('user');
             $this->db->where("level >", $userData['level']);
-            $this->db->where("level_pass_time <", $userData['level_pass_time']);
             $query = $this->db->get();
 
             $result = $query->num_rows();
-            return $result + 1;
+            
+            $this->db->select('*');
+            $this->db->from('user');
+            $this->db->where("level =", $userData['level']);
+            $this->db->where("level_pass_time <", $userData['level_pass_time']);
+            $query = $this->db->get();
+            
+            $result += $query->num_rows();
+            return $result;
         }
         
         public function level_up($data = array()) {

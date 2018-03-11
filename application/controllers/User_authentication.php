@@ -21,9 +21,8 @@ class User_Authentication extends CI_Controller
 
     public function index(){
 
-        //echo "session: ",$this->session->userdata('email');
+        //if not logged in
         if(!$this->session->userdata('email')) {
-            //echo $this->config->item('facebook_app_id');
 
             $fb = new Facebook\Facebook([
               'app_id' => $this->config->item('facebook_app_id'), // Replace {app-id} with your app id
@@ -35,7 +34,6 @@ class User_Authentication extends CI_Controller
             $permissions = ['email']; // Optional permissions
             $loginUrl = $helper->getLoginUrl('http://127.0.0.1/vyuh/index.php/user_authentication/login', $permissions);
 
-            //echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
             $loginURL['loginURL'] = htmlspecialchars($loginUrl);
             $this->load->view('user/header');
             $this->load->view('user/login', $loginURL);
@@ -67,6 +65,7 @@ class User_Authentication extends CI_Controller
                 $userData['name'] = $userProfile['first_name'] . " " . $userProfile['last_name'];
                 $userData['email'] = $userProfile['email'];
                 $userData['profile_picture'] = $userProfile['picture']['data']['url'];
+                $userData['coins'] = 100;
                 
                 //$history = {"Status : LOGIN", "email" : $userData['email']};
                 
@@ -124,12 +123,13 @@ class User_Authentication extends CI_Controller
 
         // Remove user data from session
         $this->session->unset_userdata('email');
+        $this->session->unset_userdata('profile_picture');
 
         // Check if session deleted
         // echo $this->session->userdata('email');
 
         // Redirect to login page
-        //redirect('/user_authentication');
+        redirect('/user_authentication');
     }
 
 }

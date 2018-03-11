@@ -30,6 +30,7 @@
 <body>
 
 <!-- Header Start -->
+<div>
 <header id="header">
 	<!-- Navbar Start -->
 	<nav class="navbar navbar-default navbar-fixed navbar-scrollspy bootsnav" data-minus-value-desktop="0" data-minus-value-mobile="55" data-speed="800">
@@ -45,13 +46,42 @@
 			<!-- End Header Navigation -->
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="scrol"><a href="/vyuh">Home</a> </li>
-					<li class="scrol"><a href="/vyuh/index.php/profile">Profile</a> </li>
-					<li class="scrol"><a href="/vyuh/index.php/vyuh/play_game">Game</a> </li>
-					<li class="scrol"><a href="/vyuh/index.php/ranklist">Rank List</a> </li>
-					<li class="scrol"><a href="/vyuh/index.php/rules">Rules</a> </li>
-					<li class="scrol"><a href="/vyuh/index.php/how_to_play">How to Play</a> </li>
-					<li class="scrol"><a href="/vyuh/index.php/user_authentication/logout">Logout</a> </li>
+					<li class="scrol"><a href="/vyuh">HOME</a> </li>
+					<!--<li class="scrol"><a href="/vyuh/index.php/profile">Profile</a> </li>-->
+					<li class="scrol"><a href="/vyuh/index.php/vyuh/game">GAME</a> </li>
+					<li class="scrol"><a href="/vyuh/index.php/ranklist">RANK LIST</a> </li>
+					<li class="scrol"><a href="/vyuh/index.php/rules">RULES</a> </li>
+					<!--<li class="scrol"><a href="/vyuh/index.php/how_to_play">How to Play</a> </li>-->
+					<!--<li class="scrol"><a href="/vyuh/index.php/user_authentication/logout">Logout</a> </li>-->
+<!--                                        <div class="userSection">
+            <div class="userSection__dropdownToggle" data-toggle="dropdown">
+              <div class="userSection__userAvatar">
+                <img class="" src="http://placehold.it/150x150" alt="User Avatar">
+              </div>
+              <i class="userSection__caret"></i>
+            </div>
+            <ul class="userSection__userMenu">
+              <li class="userSection__userMenu__menuItem"><a href="#" >User menu item</a></li>
+              <li class="userSection__userMenu__menuItem"><a href="#" >User menu item</a></li>
+              <li class="userSection__userMenu__menuItem"><a href="#" >User menu item</a></li>
+              <li class="userSection__userMenu__menuItem"><a href="#" >User menu item</a></li>
+            </ul>
+          </div>
+        </div>-->
+
+<?php if($this->session->userdata('profile_picture')) {echo'<li><div class="User-area">
+                <div class="User-avtar">
+                 <img src="'.$this->session->userdata('profile_picture').'"/>
+                </div>
+                  <ul class="User-Dropdown">
+                    <div class="user-data">'.$this->session->userdata('name').'<br>'.$this->session->userdata('email').'</div>
+                    <li><a href="">Coins</a><span>'.$this->session->userdata('coins').'</span></li>
+                    <li><a href="/vyuh/index.php/profiles">Profile</a></li>
+                    <li><a href="/vyuh/index.php/user_authentication/logout">Logout</a></li>
+                  </ul>
+</div></li>';} ?>
+
+
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -69,6 +99,7 @@
         </div>
         
 	</header>
+</div>
 <!-- Header End -->
 
 
@@ -102,3 +133,4 @@
 
 <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.2/dist/typeit.min.js"></script>
 
+<script src="/vyuh/assets/js/header.js"></script>
