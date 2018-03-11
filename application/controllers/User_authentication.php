@@ -6,13 +6,10 @@ class User_Authentication extends CI_Controller
     function __construct() {
         parent::__construct();
 
-        // Load facebook library
         $this->load->library('facebook');
 
-        //Load user model
         $this->load->model('user');
         $this->load->model('history');
-//        $this->load->model('level');
 
         $this->config->load('facebook');
 
@@ -29,10 +26,10 @@ class User_Authentication extends CI_Controller
               'app_secret' => $this->config->item('facebook_app_secret'),
               'default_graph_version' => $this->config->item('facebook_graph_version'),
             ]);
-
+            
             $helper = $fb->getRedirectLoginHelper();
             $permissions = ['email']; // Optional permissions
-            $loginUrl = $helper->getLoginUrl('http://127.0.0.1/vyuh/index.php/user_authentication/login', $permissions);
+            $loginUrl = $helper->getLoginUrl('http://'.$_SERVER['SERVER_NAME'].'/vyuh/index.php/user_authentication/login', $permissions);
 
             $loginURL['loginURL'] = htmlspecialchars($loginUrl);
             $this->load->view('user/header');
@@ -77,7 +74,7 @@ class User_Authentication extends CI_Controller
 
                     $user_history['user_id'] = $userData['id'];
                     $user_history['type'] = "LOGIN";
-                    $user_history['date'] = date("h:i:sa");
+                    $user_history['date'] = date("Y-m-d H:i:s");
                     $user_history['current_level'] = "0";
                     $user_history['ip'] = $_SERVER['REMOTE_ADDR'];
                     
@@ -95,7 +92,7 @@ class User_Authentication extends CI_Controller
             } else {
                 $user_history['user_id'] = $userData['id'];
                 $user_history['type'] = "SIGNUP";
-                $user_history['date'] = date("h:i:sa");
+                $user_history['date'] = date("Y-m-d H:i:s");
                 $user_history['current_level'] = "0";
                 $user_history['ip'] = $_SERVER['REMOTE_ADDR'];
                 
@@ -107,7 +104,7 @@ class User_Authentication extends CI_Controller
             
             }else{
                 $user_history['type'] = "LOGIN_FAILED";
-                $user_history['date'] = date("h:i:sa");
+                $user_history['date'] = date("Y-m-d H:i:s");
                 $user_history['ip'] = $_SERVER['REMOTE_ADDR'];
 
                 $this->history->log_user_activity($user_history);
@@ -123,7 +120,7 @@ class User_Authentication extends CI_Controller
     public function logout() {
         $user_history['user_id'] = $this->session->userdata('id');
         $user_history['type'] = "LOGOUT";
-        $user_history['date'] = date("h:i:sa");
+        $user_history['date'] = date("Y-m-d H:i:s");
         $user_history['current_level'] = "0";
         $user_history['ip'] = $_SERVER['REMOTE_ADDR'];
         
