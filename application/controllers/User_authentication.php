@@ -60,12 +60,13 @@ class User_Authentication extends CI_Controller
                 // Get user facebook profile details
                 $userProfile = $this->facebook->request('get', '/me?fields=id,first_name,last_name,email,gender,locale,picture');
 
-                echo "auth success<br>",$userProfile['email'];
+                //echo "auth success<br>",$userProfile['email'];
 
                 $userData['name'] = $userProfile['first_name'] . " " . $userProfile['last_name'];
                 $userData['email'] = $userProfile['email'];
                 $userData['profile_picture'] = $userProfile['picture']['data']['url'];
                 $userData['coins'] = 100;
+                $userData['type'] = "REGULAR";
                 
                 //$history = {"Status : LOGIN", "email" : $userData['email']};
                 
@@ -83,6 +84,12 @@ class User_Authentication extends CI_Controller
                     $this->history->log_user_activity($user_history);
 
                     $this->session->set_userdata($userData);
+                    if ($this->session->userdata('status') == "TERMINATED") {
+                        redirect('user_authentication/blocked', 'location');
+                    }
+                    if ($this->session->userdata('type') == "ADMIN") {
+                        redirect('admin/index', 'location');
+                    }
                     redirect('dashboard', 'location');
 
             } else {
@@ -109,6 +116,10 @@ class User_Authentication extends CI_Controller
         }
     }
 
+    public function blocked() {
+        $this->load->view('user/blocked');
+    }
+    
     public function logout() {
         $user_history['user_id'] = $this->session->userdata('id');
         $user_history['type'] = "LOGOUT";

@@ -5,7 +5,7 @@
 <div class="container" id="login">
   <div class="banner"></div>
   <div class="description">
-    <div class='writeup' id='writeup1'>VHUY 7.0</div>
+    <div class='writeup' id='writeup1'></div>
     <!--<p>login with facebook to play</p>-->
     
     <a href='<?php echo $loginURL; ?>'><img style="width:200px;" class="login-button" src="https://linksind.net/old/fb.png"></a>
@@ -57,7 +57,8 @@
      speed: 60,
      breakLines: false,
      autoStart: false,
-     loop: true
+     loop: true,
+     cursor: false
     });
 </script>
 

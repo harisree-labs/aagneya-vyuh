@@ -25,6 +25,9 @@ class Dashboard extends CI_Controller
         if (!$college) {
             redirect('profile', 'location');
         }
+        if ($this->session->userdata('status') == "TERMINATED") {
+            redirect('user_authentication/blocked', 'location');
+        }
     }
 
     // Load Dashboard view

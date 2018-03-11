@@ -76,7 +76,6 @@ class User extends CI_Model {
             $this->db->from('user');
             $this->db->order_by("level", "desc");
             $this->db->order_by("level_pass_time", "asc");
-            $this->db->limit(50);
 
             $query = $this->db->get();
 
@@ -114,5 +113,82 @@ class User extends CI_Model {
             return true;
         }
 
+        //admin function
+        public function get_malicious_users() {
+            $this->db->select('*');
+            $this->db->from('user');
+            $this->db->where('malicious>',1);
+            $this->db->order_by("malicious", "desc");
 
+            $query = $this->db->get();
+            $result = $query->result_array();
+            return $result;
+        }
+        
+        public function get_users() {
+            $this->db->select('*');
+            $this->db->from('user');
+
+            $query = $this->db->get();
+            $result = $query->result_array();
+            return $result;
+        }
+        
+        public function get_blocked_users() {
+            $this->db->select('*');
+            $this->db->from('user');
+            $this->db->where('status',"TERMINATED");
+
+            $query = $this->db->get();
+            $result = $query->result_array();
+            return $result;
+        }
+        
+        public function get_suspected_users() {
+            $this->db->select('*');
+            $this->db->from('user');
+            $this->db->where('status',"SUSPECTED");
+
+            $query = $this->db->get();
+            $result = $query->result_array();
+            return $result;
+        }
+        
+        public function get_admin_users() {
+            $this->db->select('*');
+            $this->db->from('user');
+            $this->db->where('type',"ADMIN");
+
+            $query = $this->db->get();
+            $result = $query->result_array();
+            return $result;
+        }
+        
+        public function block_user($user_id) {
+            $data['STATUS'] = "TERMINATED";
+            $this->db->where('id', $user_id);
+            $this->db->update('user', $data);
+            return true;
+        }
+        
+        public function unblock_user($user_id) {
+            $data['STATUS'] = "SUSPECTED";
+            $this->db->where('id', $user_id);
+            $this->db->update('user', $data);
+            return true;
+        }
+        
+        public function make_admin($user_id) {
+            $data['type'] = "ADMIN";
+            $this->db->where('id', $user_id);
+            $this->db->update('user', $data);
+            return true;
+        }
+        public function downgrade_admin($user_id) {
+            $data['type'] = "MODERATOR";
+            $this->db->where('id', $user_id);
+            $this->db->update('user', $data);
+            return true;
+        }
+        
 }

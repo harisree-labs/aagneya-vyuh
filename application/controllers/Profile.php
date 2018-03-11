@@ -24,9 +24,13 @@ class Profile extends CI_Controller
         if (!$email) {
             redirect('user_authentication', 'location');
         }
+        if ($this->session->userdata('status') == "TERMINATED") {
+            redirect('user_authentication/blocked', 'location');
+        }
         if ($college) {
             redirect('dashboard', 'location');
         }
+        
     }
 
     // retrieve available user data from db and load profile view

@@ -75,7 +75,7 @@
                 </div>
                   <ul class="User-Dropdown">
                     <div class="user-data">'.$this->session->userdata('name').'<br>'.$this->session->userdata('email').'</div>
-                    <li><a href="">Coins</a><span>'.$this->session->userdata('coins').'</span></li>
+                    <li><a>Coins</a><span>'.$this->session->userdata('coins').'</span></li>
                     <li><a href="/vyuh/index.php/profiles">Profile</a></li>
                     <li><a href="/vyuh/index.php/user_authentication/logout">Logout</a></li>
                   </ul>
@@ -87,16 +87,6 @@
 			<!-- /.navbar-collapse -->
 		</div>
 	</nav>
-
-        <!--mob view-->
-        <div class="visible-xs-block mobnavbar" id="mobnavbar">
-            <div class="row">
-                <li class="col-xs-offset-1 col-xs-2 scrol"><a href="/vyuh">Home</a> </li>
-                <li class="col-xs-2 scrol"><a href="/vyuh/index.php/profile">Profile</a> </li>
-                <li class="col-xs-2 scrol"><a href="/vyuh/index.php/vyuh/play_game">Game</a> </li>
-                <li class="col-xs-4 scrol"><a href="/vyuh/index.php/ranklist">Rank List</a> </li>
-            </div>
-        </div>
         
 	</header>
 </div>

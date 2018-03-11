@@ -2,7 +2,7 @@
 
 <div class="wrap">
   <h1>Quest <?php echo $level_no ?><br></h1>
-  <img class="mascot" src="https://images.pexels.com/photos/681390/pexels-photo-681390.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="">
+  <img class="mascot" src="<?php echo $questionImage; ?>" alt="">
   <p><?php echo $question ?></p>
   <form class="form" action="answer" method="post">
     <input class="input" name="answer" type="text" placeholder="Enter your answer..." required>

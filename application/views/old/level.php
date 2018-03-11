@@ -57,8 +57,9 @@
                         <td><?php echo $level['answer']; ?></td>
                         <td><?php echo $level['active']; ?></td>
                         <td><?php echo $level['type']; ?></td>
-                        <td><?php echo @$level['hint']; ?></td>
-                        <td><?php echo @$level['hint_status']; ?></td>
+                        <!--<td><?php echo @$level['hint']; ?></td>-->
+                        <!--<td><?php echo @$level['hint_status']; ?></td>-->
+                        <td><span style="padding-right: 30px;" class="glyphicon glyphicon-eye-open"></span><span class="glyphicon glyphicon-plus"></span></td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>

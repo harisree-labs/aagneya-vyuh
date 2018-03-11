@@ -12,20 +12,10 @@ class Ranklist extends CI_Controller
         $this->load->model('user');
         $this->load->helper('url');
 
-        @$email = $this->session->userdata('email');
-        @$college = $this->session->userdata('college');
-        if (!$email) {
-            redirect('user_authentication', 'location');
-        }
-        if (!$college) {
-            redirect('profile', 'location');
-        }
     }
 
     // Load Ranklist view
     public function index(){
-        $email = $this->session->userdata('email');
-        if ($email) {
             // $ranklistData = array();
              $data['ranklist'] = $this->user->get_ranklist();
 
@@ -33,9 +23,5 @@ class Ranklist extends CI_Controller
             $this->load->view('user/header');
             $this->load->view('user/ranklist', $data);
             //echo "session: ",$this->session->userdata('email');
-        } else{
-            redirect('user_authentication', 'location');
-        }
-
     }
 }

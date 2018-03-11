@@ -41,6 +41,18 @@ class Trials extends CI_Model {
         }
         
         
+        public function get_malicious_trials_of($data) {
+            $this->db->select('*');
+            $this->db->from('trials');
+            $this->db->where("user_id", $data);
+            $this->db->where("malicious", 1);
+            
+            $query = $this->db->get();
+            $result = $query->result_array();
+            return $result;
+        }
+        
+        
         
 }
 

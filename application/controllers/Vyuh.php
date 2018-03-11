@@ -23,6 +23,9 @@ class Vyuh extends CI_Controller
         if (!$college) {
             redirect('profile', 'location');
         }
+        if ($this->session->userdata('status') == "TERMINATED") {
+            redirect('user_authentication/blocked', 'location');
+        }
     }
     
     public function index() {
@@ -56,12 +59,26 @@ class Vyuh extends CI_Controller
     
     function answer(){
         
+        $user_trials['user_id'] = $this->session->userdata('id');
+        
         $inputAnswer = $_POST['answer'];
+        $re = '/[$&+,:;=?@#|\'<>~`.-^*()%!]/';
+        preg_match_all($re, $inputAnswer, $matches, PREG_SET_ORDER, 0);
+        
+        if (sizeof($matches) == 0) {
+            $user_trials['malicious'] = 0;
+            //echo sizeof($matches);
+        } else {
+            $user_trials['malicious'] = 1;
+            $sql = "UPDATE `user` SET malicious = malicious + 1 WHERE id = ".$user_trials['user_id'];
+            $query = $this->db->query($sql);    
+            //echo sizeof($matches);
+        }
+        
         $email = $this->session->userdata('email');
         
         $data = $this->level->get_next_answer_for_user($email);
 
-        $user_trials['user_id'] = $this->session->userdata('id');
         $user_trials['level_no'] = $this->session->userdata('level');
         $user_trials['date'] = date("Y-m-d H:i:s");
         $user_trials['ip'] = $_SERVER['REMOTE_ADDR'];
@@ -82,7 +99,7 @@ class Vyuh extends CI_Controller
             redirect('vyuh/right_answer', 'location');
 //            echo $this->session->userdata('level');
         } else{
-            echo "Wrong Answer!";
+           // echo "Wrong Answer!";
             redirect('vyuh/wrong_answer', 'location');
         }
         //$this->load->view('success', $data);
