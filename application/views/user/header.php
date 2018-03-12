@@ -8,22 +8,30 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>VYUH | AAGNEYA</title>
-
-    <link rel="stylesheet" type="text/css" href="/vyuh/css/master.css">
-    <link rel="stylesheet" type="text/css" href="/vyuh/css/style.css">
+    <title>VYUH 7.0 | AAGNEYA</title>
+    <link rel="icon" href="<?php echo base_url(); ?>assets/images/vyuh-logo.jpg">
     
-    <link rel="stylesheet" type="text/css" href="/vyuh/assets/css/header.css">
-
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/master.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
     
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/header.css">
+
+<!-- Fonts -->
 <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Chewy' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
-    
 <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="<?php echo base_url(); ?>assets/sb/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="/vyuh/assets/sb/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- jQuery -->
+    <script src="<?php echo base_url(); ?>assets/sb/vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<?php echo base_url(); ?>assets/sb/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -39,18 +47,18 @@
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <i class="fa fa-bars"></i> </button>
 				<a class="navbar-brand" href="http://aagneyavyuh.co.in">
-           <img src="/vyuh/images/mobile_logo.png" class="logo logo-display" alt="">
-           <img src="/vyuh/images/logo_2.png" class="logo logo-scrolled" alt="">
+           <img src="<?php echo base_url(); ?>assets/images/vyuh-logo.jpg" class="logo logo-display" alt="">
+           <img src="<?php echo base_url(); ?>assets/images/vyuh-logo.jpg" class="logo logo-scrolled" alt="">
         </a>
 			</div>
 			<!-- End Header Navigation -->
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="scrol"><a href="/vyuh">HOME</a> </li>
-					<!--<li class="scrol"><a href="/vyuh/index.php/profile">Profile</a> </li>-->
-					<li class="scrol"><a href="/vyuh/index.php/vyuh/game">GAME</a> </li>
-					<li class="scrol"><a href="/vyuh/index.php/ranklist">RANK LIST</a> </li>
-					<li class="scrol"><a href="/vyuh/index.php/rules">RULES</a> </li>
+					<li class="scrol"><a href="<?php echo base_url(); ?>dashboard">HOME</a> </li>
+					<!--<li class="scrol"><a href="<?php echo base_url(); ?>vyuh/index.php/profile">Profile</a> </li>-->
+					<li class="scrol"><a href="<?php echo base_url(); ?>game">GAME</a> </li>
+					<li class="scrol"><a href="<?php echo base_url(); ?>ranklist">RANK LIST</a> </li>
+					<li class="scrol"><a href="<?php echo base_url(); ?>rules">RULES</a> </li>
 					<!--<li class="scrol"><a href="/vyuh/index.php/how_to_play">How to Play</a> </li>-->
 					<!--<li class="scrol"><a href="/vyuh/index.php/user_authentication/logout">Logout</a> </li>-->
 <!--                                        <div class="userSection">
@@ -76,8 +84,8 @@
                   <ul class="User-Dropdown">
                     <div class="user-data">'.$this->session->userdata('name').'<br>'.$this->session->userdata('email').'</div>
                     <li><a>Coins</a><span>'.$this->session->userdata('coins').'</span></li>
-                    <li><a href="/vyuh/index.php/profiles">Profile</a></li>
-                    <li><a href="/vyuh/index.php/user_authentication/logout">Logout</a></li>
+                    <li><a href="'.base_url().'profiles">Profile</a></li>
+                    <li><a href="'.base_url().'logout">Logout</a></li>
                   </ul>
 </div></li>';} ?>
 
@@ -93,34 +101,9 @@
 <!-- Header End -->
 
 
-
-<script src="/vyuh/js/jquery.2.2.3.min.js"></script>
-<script src="/vyuh/js/bootstrap.min.js"></script>
-
     <!--To View on scroll-->
-<script src="/vyuh/js/jquery.appear.js"></script>
-    
-    <!--OWL Slider-->
-<script src="/vyuh/js/owl.carousel.min.js"></script>
-    
-    <!--Parallax Bgs-->
-<script src="/vyuh/js/parallaxie.js"></script>
-    
-    <!--Revolution Slider main files-->
-<script src="/vyuh/js/revolution/jquery.themepunch.tools.min.js"></script>
-<script src="/vyuh/js/revolution/jquery.themepunch.revolution.min.js"></script>
-<script src="/vyuh/js/revolution/revolution.extension.actions.min.js"></script>
-<script src="/vyuh/js/revolution/revolution.extension.layeranimation.min.js"></script>
-<script src="/vyuh/js/revolution/revolution.extension.navigation.min.js"></script>
-<script src="/vyuh/js/revolution/revolution.extension.parallax.min.js"></script>
-<script src="/vyuh/js/revolution/revolution.extension.slideanims.min.js"></script>
-<!-- <script src="js/revolution/revolution.extension.video.min.js"></script> -->
-
-    
-<!--wow transitions-->
-<script src="/vyuh/js/wow.min.js"></script>
-<script src="/vyuh/js/function.js"></script>
+<script src="<?php echo base_url(); ?>js/jquery.appear.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/typeit@5.5.2/dist/typeit.min.js"></script>
 
-<script src="/vyuh/assets/js/header.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/header.js"></script>

@@ -1,8 +1,8 @@
 #writeup1 {
-	color: #FE8804;;
+	color: beige;
 	font-size: 45px;
 	font-family: Chewy;
-    /*position: absolute;*/
+    /*position: absolute; color:#FE8804;*/
     text-align: center !important;
     padding-bottom: 20px;
 }
@@ -11,6 +11,9 @@
     #writeup1 {
         font-size: 25px;
     }
+}
+.navbar {
+	background-color: none !important;
 }
 
 #header {
@@ -38,7 +41,6 @@ li:hover {
 }
 
 #login {
-  background-color: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

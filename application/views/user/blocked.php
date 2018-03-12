@@ -17,12 +17,8 @@
 <p>If you think it's our fault, do let's know.</p>
    </div>
 <div class="cont_input_password">
-<p>Type your Message to admin</p>   
-<input type="text" class="input_password_" value="" placeholder="Please activate my account"  style="" />
+    <a href="http://fb.com/aagneyavyuh"><p>Leave a Message to admin</p></a>   
    </div>
-<div class="cont_btn">
-   <button class="btn_proceed"><span>PROCEED&#10141;</span>
-</button>
    </div>
   </div>
   </div>

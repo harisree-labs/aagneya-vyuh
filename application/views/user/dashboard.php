@@ -1,8 +1,4 @@
-<link href="/vyuh/assets/css/dashboard.css" rel="stylesheet">
-
-<!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
+<link href="<?php echo base_url(); ?>assets/css/dashboard.css" rel="stylesheet">
 
 <div class="box-view container">
 	<div class="row">
@@ -59,13 +55,13 @@
 <div class="container offer_section padding_top20 padding_bottom20">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4 col-sm-4 col-xs-12">
-				<div class="offer_image"> <img src="/vyuh/images/website-cost-cta-image.png" alt="image"> </div>
+			<div class="col-md-4 col-sm-4 hidden-xs">
+				<div class="offer_image"> <img src="<?php echo base_url(); ?>images/website-cost-cta-image.png" alt="image"> </div>
 			</div>
 			<div class="col-md-8 col-sm-8 col-xs-12">
 				<div class="offer_text text-center">
                                     <h2>Are you ready to play?</h2></br>
-					<a href="vyuh/game" class="btn-light"> Let's Play :) </a>
+					<a href="<?php echo base_url(); ?>game" class="btn-light"> Let's Play :) </a>
 				</div>
 			</div>
 		</div>

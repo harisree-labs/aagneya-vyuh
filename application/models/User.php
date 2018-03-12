@@ -57,6 +57,26 @@ class User extends CI_Model {
             $this->db->update('user', $data);
             return true;
         }
+        
+        public function update_coins() {
+            $email = $this->session->userdata('email');
+            $this->db->where('email', $email);
+            $this->db->set('coins', 'coins-10', FALSE);
+            $this->db->update('user');
+            $coins = $this->session->userdata('coins');
+            $this->session->set_userdata('coins',$coins-10);
+            return true;
+        }
+        
+        public function reward_coins() {
+            $email = $this->session->userdata('email');
+            $this->db->where('email', $email);
+            $this->db->set('coins', 'coins+30', FALSE);
+            $this->db->update('user');
+            $coins = $this->session->userdata('coins');
+            $this->session->set_userdata('coins',$coins+30);
+            return true;
+        }
 
         // retrieve user data from db
         public function retrieve_user_data($email) {
@@ -99,7 +119,7 @@ class User extends CI_Model {
             $this->db->select('*');
             $this->db->from('user');
             $this->db->where("level =", $userData['level']);
-            $this->db->where("level_pass_time <", $userData['level_pass_time']);
+            $this->db->where("level_pass_time <=", $userData['level_pass_time']);
             $query = $this->db->get();
             
             $result += $query->num_rows();

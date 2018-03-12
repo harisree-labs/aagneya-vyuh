@@ -74,7 +74,7 @@ img {
   border: none;
   background: #0074B1;
   display: block;
-  width: 100%;
+  width: 30%;
   padding: 0 1em;
   font: inherit;
   border-radius: 10px;
@@ -83,7 +83,21 @@ img {
   line-height: 2;
   text-decoration: none;
   text-align: center;
+  height: 50px;
+  margin-top: 5px;
 }
+
+.non-pm {
+  display: -webkit-flex !important;
+}
+.pm {
+    width: 100%;
+}
+.non-pm button{
+    background: wheat;
+    color: blue;
+}
+
 
 .modal {
   position: fixed;

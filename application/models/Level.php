@@ -46,15 +46,26 @@ class Level extends CI_Model {
             
         }
         
-        public function get_next_answer_for_user($email){
+        public function get_next_answer_for_user($data){
             
 //            $sql = "SELECT answer FROM `user` `u` JOIN `level` `l` ON `u`.`level`+1 = `l`.`level_no` WHERE `u`.`email` = '$email' ";
 //            $query = $this->db->query($sql, array($email));
 //            $answer = $query->row();
-
-            return $answer;
             
-        }
-
+            $this->db->select('percentage');
+            $this->db->from('proximity');
+            $this->db->where('level_no', $data['level']);
+            $this->db->where('answer', $data['answer']);
+            
+            $query = $this->db->get();
+            $answer = $query->row_array();
+            
+            if (!$answer['percentage']) {
+                $answer['percentage'] = 0;
+            }
+            //echo "level",$answer['percentage'],"perc";
+            return $answer['percentage'];
+        
+        } 
         
 }

@@ -14,6 +14,8 @@ class User_Authentication extends CI_Controller
         $this->config->load('facebook');
 
         $this->load->library('session');
+        
+        $this->load->helper('url');
     }
 
     public function index(){

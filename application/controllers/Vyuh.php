@@ -13,7 +13,7 @@ class Vyuh extends CI_Controller
         
 //        $user_history['user_id'] = $this->session->userdata('id');
 //        $user_history['current_level'] = $this->session->userdata('level');
-//        $user_history['date'] = date("h:i:sa");
+//        $user_history['date'] = date("Y-m-d H:i:s");
 //        $user_history['ip'] = $_SERVER['REMOTE_ADDR'];
         @$email = $this->session->userdata('email');
         @$college = $this->session->userdata('college');
@@ -38,72 +38,100 @@ class Vyuh extends CI_Controller
     }
     
     function game(){
-        $email = $this->session->userdata('email');
-        $data = $this->level->get_next_question_for_user($email);
-            
-        $user_history['user_id'] = $this->session->userdata('id');
-        $user_history['current_level'] = $this->session->userdata('level');
-        $user_history['date'] = date("h:i:sa");
-        $user_history['ip'] = $_SERVER['REMOTE_ADDR'];
-        
-        $user_history['type'] = "PLAY_GAME";
-        $user_history['details'] = json_encode($data);
+        if (total_levels > $this->session->userdata('level')) {
 
-        $this->history->log_user_activity($user_history);
-        
-//        $this->load->view('user/game');
-        $this->load->view('user/header');
-        $this->load->view('game', $data);
+            $email = $this->session->userdata('email');
+            $data = $this->level->get_next_question_for_user($email);
+    //        print_r($data);
+            $user_history['user_id'] = $this->session->userdata('id');
+            $user_history['current_level'] = $this->session->userdata('level');
+            $user_history['date'] = date("Y-m-d H:i:s");
+            $user_history['ip'] = $_SERVER['REMOTE_ADDR'];
+
+            $user_history['type'] = "PLAY_GAME";
+            $user_history['details'] = json_encode($data);
+
+            $this->history->log_user_activity($user_history);
+
+    //        $this->load->view('user/game');
+            $this->load->view('user/header');
+            $this->load->view('game', $data);
+        } else {
+            $this->load->view('wait_for_game');
+        }
         
     }
     
     function answer(){
-        
-        $user_trials['user_id'] = $this->session->userdata('id');
-        
-        $inputAnswer = $_POST['answer'];
-        $re = '/[$&+,:;=?@#|\'<>~`.-^*()%!]/';
-        preg_match_all($re, $inputAnswer, $matches, PREG_SET_ORDER, 0);
-        
-        if (sizeof($matches) == 0) {
-            $user_trials['malicious'] = 0;
-            //echo sizeof($matches);
-        } else {
-            $user_trials['malicious'] = 1;
-            $sql = "UPDATE `user` SET malicious = malicious + 1 WHERE id = ".$user_trials['user_id'];
-            $query = $this->db->query($sql);    
-            //echo sizeof($matches);
-        }
-        
-        $email = $this->session->userdata('email');
-        
-        $data = $this->level->get_next_answer_for_user($email);
+        if (isset($_POST['answer'])) {
+            $input['answer'] = $_POST['answer'];
+            $input['level'] = $this->session->userdata('level')+1;
+            $pm = $_POST['submit'];
 
-        $user_trials['level_no'] = $this->session->userdata('level');
-        $user_trials['date'] = date("Y-m-d H:i:s");
-        $user_trials['ip'] = $_SERVER['REMOTE_ADDR'];
-        $user_trials['user_input'] = escapeshellarg($inputAnswer);
+            $user_trials['user_id'] = $this->session->userdata('id');
+            $re = '/[$&+,:;=?@#|\'<>~`.-^*()%!]/';
+            preg_match_all($re, $input['answer'], $matches, PREG_SET_ORDER, 0);
 
-        $this->trials->log_user_inputs($user_trials);
-        
-        if ($inputAnswer == $data->answer) {
-            echo "Right Answer!";
-            $level = $this->session->userdata('level');
-            $this->session->set_userdata('level',$level+1);
-//            $userData['level'] = $this->session->userdata('level');
-//            $userData['level_pass_time'] = date("Y-m-d H:i:s");
-//            $this->user->level_up($userData);
-//            $user_history['type'] = "LEVEL_UP";
-//            $user_history['current_level'] = $userData['level'];
-//            $this->history->log_user_activity($user_history);
-            redirect('vyuh/right_answer', 'location');
-//            echo $this->session->userdata('level');
-        } else{
-           // echo "Wrong Answer!";
-            redirect('vyuh/wrong_answer', 'location');
+            if (sizeof($matches) == 0) {
+                $user_trials['malicious'] = 0;
+                //echo sizeof($matches);
+            } else {
+                $user_trials['malicious'] = 1;
+                $sql = "UPDATE `user` SET malicious = malicious + 1 WHERE id = ".$user_trials['user_id'];
+                $query = $this->db->query($sql);    
+                //echo sizeof($matches);
+            }
+
+            //print_r($input);
+            $data['percentage'] = $this->level->get_next_answer_for_user($input);
+            //echo $data;
+
+            $user_trials['level_no'] = $this->session->userdata('level');
+            $user_trials['date'] = date("Y-m-d H:i:s");
+            $user_trials['ip'] = $_SERVER['REMOTE_ADDR'];
+            $user_trials['user_input'] = escapeshellarg($input['answer']);
+
+            $this->trials->log_user_inputs($user_trials);
+
+            $coins = $this->session->userdata('coins');
+
+            if ($data['percentage'] == 100) {//$data->
+                //echo "Right Answer!";
+                //echo $data['percentage'];
+                $level = $this->session->userdata('level');
+                if (($level+1) % 5 == 0) {
+                    echo "done";
+                    $this->user->reward_coins();
+                }
+                $this->session->set_userdata('level',$level+1);
+                $userData['level'] = $this->session->userdata('level');
+                $userData['level_pass_time'] = date("Y-m-d H:i:s");
+                $this->user->level_up($userData);
+                $user_history['type'] = "LEVEL_UP";
+                $user_history['current_level'] = $userData['level'];
+                $this->history->log_user_activity($user_history);
+                if ($pm == 0){
+//                    echo $level;
+                    redirect('vyuh/right_answer', 'location');
+                }
+                if ($pm == 1 && $coins-10 > -1) {
+                    $this->user->update_coins();
+                    $this->load->view('user/header');
+                    $this->load->view('user/proximity', $data);
+                }
+
+            } else if ($data['percentage'] >= 0 && $pm == 1  && $coins-10 > -1) {
+               // echo "Wrong Answer!";
+                //echo "prox";
+                $this->user->update_coins();
+                $this->load->view('user/header');
+                $this->load->view('user/proximity', $data);
+            } else {
+                redirect('vyuh/wrong_answer', 'location');
+            }
+            //$this->load->view('success', $data);
+    //        $this->load->view('error', $data);
         }
-        //$this->load->view('success', $data);
-//        $this->load->view('error', $data);
         
 
     }

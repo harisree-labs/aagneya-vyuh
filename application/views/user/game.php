@@ -9,10 +9,8 @@
 
 <title>VYUH | AAGNEYA</title>
 
-<link rel="icon" href="http://logicsforest.com/themeforest/zoonx/images/favicon.png" type="image/x-icon">
-<link rel="stylesheet" type="text/css" href="/vyuh/css/master.css">
-<link rel="stylesheet" type="text/css" href="/vyuh/css/style.css">
-<!-- <link rel="stylesheet" type="text/css" href="css/settings.css"> -->
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/master.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

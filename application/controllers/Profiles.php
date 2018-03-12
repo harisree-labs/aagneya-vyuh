@@ -58,7 +58,7 @@
 //            
 //            $user_history['user_id'] = $this->session->userdata('id');
 //            $user_history['type'] = "PROFILE_UPDATE";
-//            $user_history['date'] = date("h:i:sa");
+//            $user_history['date'] = date("Y-m-d H:i:s");
 //            $user_history['current_level'] = $this->session->userdata('level');
 //            $user_history['ip'] = $_SERVER['REMOTE_ADDR'];
 //            $user_history['details'] = json_encode($userData);

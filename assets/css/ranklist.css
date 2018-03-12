@@ -1,6 +1,10 @@
-/** {
-    font-family: 'Oxygen', cursive;
-}*/
+body {
+	background-image: none !important;
+}
+.navbar {
+    background-color: black !important;
+}
+
 .trow {
     font-family: 'Oxygen', cursive;
 }
