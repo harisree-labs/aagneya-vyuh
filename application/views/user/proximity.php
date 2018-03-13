@@ -24,10 +24,10 @@
 
 <div style="padding-top: 30px;" class="ansform wrap">
   <form class="form" action="answer" method="post">
-    <div class="non-pm"><input class="input" name="answer" type="text" placeholder="Enter your answer..." required>
+    <div class="non-pm"><input style="color: black;" class="input" name="answer" type="text" placeholder="Enter your answer..." required>
         <button class="button" name="submit" value="0" type="submit">Submit</button>
     </div>
-    <button class="pm button" name="submit" value="1" type="submit">Use Proxi Meter</button>
+    <?php if ($this->session->userdata('coins') >= 10) {echo '<button class="pm button" name="submit" value="1" type="submit">Use Proxi Meter</button>';} ?>
   </form>
 </div>
 

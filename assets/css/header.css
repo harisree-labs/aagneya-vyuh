@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Audiowide");
 html, body {
     background-color: black !important;
-	background-image: url("/vyuh/assets/images/vyuh-logo.jpg");
-	background-repeat: no-repeat, repeat;
-	position: center;
-	background-size: cover;
-	background-position: center;
 }
 #header {
     padding-bottom: 85px;

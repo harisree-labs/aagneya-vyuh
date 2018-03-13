@@ -1,11 +1,16 @@
 <link href="<?php echo base_url(); ?>assets/css/dashboard.css" rel="stylesheet">
 
+<script>
+    html, body{
+        background-image: none !important;
+    }
+</script>
 <div class="box-view container">
 	<div class="row">
 		<div class="col-md-4">
 			<div class="dash-box dash-box-color-1">
 				<div class="dash-box-icon">
-					<i class="glyphicon glyphicon-cloud"></i>
+					<i class="fa fa-flag"></i>
 				</div>
 				<div class="dash-box-body">
 					<span class="dash-box-count">#<?php echo $rank; ?></span>
@@ -13,14 +18,14 @@
 				</div>
 				
 				<div class="dash-box-action">
-					<button>Rank</button>
+					<button style="font-family: Audiowide;">Rank</button>
 				</div>				
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="dash-box dash-box-color-2">
 				<div class="dash-box-icon">
-					<i class="glyphicon glyphicon-download"></i>
+					<i class="fa fa-info"></i>
 				</div>
 				<div class="dash-box-body">
 					<span class="dash-box-count"><?php echo $level; ?></span>
@@ -28,14 +33,14 @@
 				</div>
 				
 				<div class="dash-box-action">
-					<button>Level</button>
+					<button style="font-family: Audiowide;">Level</button>
 				</div>				
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="dash-box dash-box-color-3">
 				<div class="dash-box-icon">
-					<i class="glyphicon glyphicon-heart"></i>
+					<i class="fa fa-magic"></i>
 				</div>
 				<div class="dash-box-body">
 					<span class="dash-box-count"><?php echo $percentage; ?>%</span>
@@ -43,7 +48,7 @@
 				</div>
 				
 				<div class="dash-box-action">
-					<button>Progress</button>
+					<button style="font-family: Audiowide;">Progress</button>
 				</div>				
 			</div>
 		</div>
@@ -60,8 +65,8 @@
 			</div>
 			<div class="col-md-8 col-sm-8 col-xs-12">
 				<div class="offer_text text-center">
-                                    <h2>Are you ready to play?</h2></br>
-					<a href="<?php echo base_url(); ?>game" class="btn-light"> Let's Play :) </a>
+                                    <h2 style="font-family: Audiowide;">Are you ready to play?</h2></br>
+					<a style="text-decoration: none !important;" style="font-family: Audiowide;" href="<?php echo base_url(); ?>game" class="btn-light"> Let's Play :) </a>
 				</div>
 			</div>
 		</div>

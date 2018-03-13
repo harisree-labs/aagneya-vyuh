@@ -125,7 +125,7 @@
         $('#make-admin').click(function() {
             $.ajax({
                 type: "POST",
-                url: "http://127.0.0.1/vyuh/index.php/admin/make_admin",
+                url: "http://".base_url()."index.php/admin/make_admin",
                 data: {user_id: $(this).parent().parent().children(':first-child').text()},
                 success: function(response)
                 {
@@ -141,7 +141,7 @@
         $('#downgrade-admin').click(function() {
             $.ajax({
                 type: "POST",
-                url: "http://127.0.0.1/vyuh/index.php/admin/downgrade_admin",
+                url: "http://".base_url()."index.php/admin/downgrade_admin",
                 data: {user_id: $(this).parent().parent().children(':first-child').text()},
                 success: function(response)
                 {

@@ -84,7 +84,7 @@
         $('#see').click(function() {
             $.ajax({
                 type: "POST",
-                url: "http://127.0.0.1/vyuh/index.php/admin/view_malicious_trials_of",
+                url: "http://http://".base_url()."index.php/admin/view_malicious_trials_of",
                 data: {user_id: $(this).parent().parent().children(':first-child').text()},
                 success: function(response)
                 {

@@ -17,16 +17,16 @@
     <p>fast</p>
   </li>
   <li>
-    <i class="fa fa-coffee" aria-hidden="true"></i>
-    <p>easy</p>
+    <i class="fa fa-users" aria-hidden="true"></i>
+    <p>1 K+</p>
   </li>
   <li>
-    <i class="fa fa-refresh" aria-hidden="true"></i>
-    <p>synced</p>
+    <i class="fa fa-coffee" aria-hidden="true"></i>
+    <p>4 days</p>
   </li>
   <li>
     <i class="fa fa-dollar" aria-hidden="true"></i>
-    <p>secure</p>
+    <p>10 K</p>
   </li>
 </ul>
 </div>

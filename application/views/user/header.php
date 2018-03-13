@@ -45,6 +45,17 @@
 		<div class="container">
 			<!-- Start Header Navigation -->
 			<div class="navbar-header">
+                            <?php if($this->session->userdata('profile_picture')) {echo'<li><div class="visible-xs User-area">
+                <div class="User-avtar">
+                 <img src="'.$this->session->userdata('profile_picture').'"/>
+                </div>
+                  <ul class="User-Dropdown">
+                    <div class="user-data">'.$this->session->userdata('name').'<br>'.$this->session->userdata('email').'</div>
+                    <li><a>Coins</a><span>'.$this->session->userdata('coins').'</span></li>
+                    <li><a href="'.base_url().'profiles">Profile</a></li>
+                    <li><a href="'.base_url().'logout">Logout</a></li>
+                  </ul>
+</div></li>';} ?>
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <i class="fa fa-bars"></i> </button>
 				<a class="navbar-brand" href="http://aagneyavyuh.co.in">
            <img src="<?php echo base_url(); ?>assets/images/vyuh-logo.jpg" class="logo logo-display" alt="">
@@ -77,14 +88,14 @@
           </div>
         </div>-->
 
-<?php if($this->session->userdata('profile_picture')) {echo'<li><div class="User-area">
+<?php if($this->session->userdata('profile_picture')) {echo'<li><div class="hidden-xs User-area">
                 <div class="User-avtar">
                  <img src="'.$this->session->userdata('profile_picture').'"/>
                 </div>
                   <ul class="User-Dropdown">
                     <div class="user-data">'.$this->session->userdata('name').'<br>'.$this->session->userdata('email').'</div>
+                    <li><a>Level</a><span>'.$this->session->userdata('level').'</span></li>
                     <li><a>Coins</a><span>'.$this->session->userdata('coins').'</span></li>
-                    <li><a href="'.base_url().'profiles">Profile</a></li>
                     <li><a href="'.base_url().'logout">Logout</a></li>
                   </ul>
 </div></li>';} ?>

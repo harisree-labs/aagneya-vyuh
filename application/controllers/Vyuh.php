@@ -141,7 +141,7 @@ class Vyuh extends CI_Controller
         $this->load->view('user/header');
         $this->load->view('user/right_answer');
         
-        header('Refresh:5; url= '. base_url().'/index.php/vyuh/game'); 
+        header('Refresh:2; url= '. base_url().'/index.php/vyuh/game'); 
         
     }
     
@@ -150,7 +150,7 @@ class Vyuh extends CI_Controller
         $this->load->view('user/header');
         $this->load->view('user/wrong_answer');
 
-        header('Refresh:5; url= '. base_url().'/index.php/vyuh/game'); 
+        header('Refresh:2; url= '. base_url().'/index.php/vyuh/game'); 
         
     }
 }
