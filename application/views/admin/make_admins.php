@@ -12,10 +12,10 @@
                                     <tr>
                                         <th>User Id</th>
                                         <th>User Name</th>
-                                        <!-- <th>Email</th> -->
+                                        <th>Email</th> 
                                         <th>College</th>
                                         <th>Level</th>
-                                        <th>Last Login</th>
+                                        <!--<th>Last Login</th>-->
                                         <th>Status</th>
                                         <th>Type</th>
                                         <th>Coins</th>
@@ -28,15 +28,15 @@
                                             <tr class="odd gradeX">
                                                 <td class="text-center"><?php echo $userDatas['id']; ?></td>
                                                 <td class="text-center"><?php echo $userDatas['name']; ?></td>
-                                                <!-- <td class="text-center"><?php echo $userDatas['email']; ?></td> -->
+                                                <td class="text-center"><?php echo $userDatas['email']; ?></td> 
                                                 <td class="text-center"><?php echo $userDatas['college']; ?></td>
                                                 <td class="text-center"><?php echo $userDatas['level']; ?></td>
-                                                <td class="text-center"><?php echo $userDatas['last_login']; ?></td>
-                                                <td class="text-center"><?php echo $userDatas['status']; ?></td>
-                                                <td class="text-center"><?php echo $userDatas['type']; ?></td> 
+                                                <!--<td class="text-center"><?php echo $userDatas['last_login']; ?></td>-->
+                                                <td class="status text-center"><?php echo $userDatas['status']; ?></td>
+                                                <td class="type text-center"><?php echo $userDatas['type']; ?></td> 
                                                 <td class="text-center"><?php echo $userDatas['coins']; ?></td>
                                                 <!-- <td class="text-center"><?php echo $userDatas['profile_picture']; ?></td> -->
-                                                <td class="text-center"><i style="cursor: pointer; padding-right: 15px;" id="block" class="fa fa-ban" aria-hidden="true"></i><i style="cursor: pointer; padding-right: 15px;" id="unblock" class="fa fa-check" aria-hidden="true"></i><i style="cursor: pointer; padding-right: 15px;" id="make-admin" class="fa fa-user-secret" aria-hidden="true"></i><i style="cursor: pointer; padding-right: 15px;" id="downgrade-admin" class="fa fa-user" aria-hidden="true"></i></td>
+                                                <td class="text-center"><i style="cursor: pointer; padding-right: 15px;" id="block" class="fa fa-ban" aria-hidden="true"></i><i style="cursor: pointer; padding-right: 15px;" id="unblock" class="fa fa-check" aria-hidden="true"></i><i style="cursor: pointer; padding-right: 15px;" id="make-admin" class="make-admin fa fa-user-secret" aria-hidden="true"></i><i style="cursor: pointer; padding-right: 15px;" id="downgrade-admin" class="downgrade-admin fa fa-user" aria-hidden="true"></i></td>
                                             </tr>
                                         <?php endforeach; ?>
                                 </tbody>
@@ -90,69 +90,73 @@
 
     <script>
         $(document).ready(function(){
-        $('#block').click(function() {
+        $('.fa-ban').click(function() {
+            var elem = $(this);
             $.ajax({
                 type: "POST",
-                url: "http://127.0.0.1/vyuh/index.php/admin/block_user",
+                url: "<?php echo base_url(); ?>admin/block_user",
                 data: {user_id: $(this).parent().parent().children(':first-child').text()},
                 success: function(response)
                 {
-                    alert(response);
+                    elem.parent().parent().find('[class*="status"]').text(response);
+                    //elem.hide();// = response;)
                 },
                 error: function(){
-                    alert("failure");
+                    elem.parent().parent().find('[class*="status"]').text(response);
                 },
-            });
-
-            $(this).parent().parent().parent().append($('<tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>'));
-    });    
-        $('#unblock').click(function() {
+            });  
+        });
+        $('.fa-check').click(function() {
+            var elem = $(this);
             $.ajax({
                 type: "POST",
-                url: "http://127.0.0.1/vyuh/index.php/admin/unblock_user",
+                url: "<?php echo base_url(); ?>admin/unblock_user",
                 data: {user_id: $(this).parent().parent().children(':first-child').text()},
                 success: function(response)
                 {
-                    alert(response);
+                    elem.parent().parent().find('[class*="status"]').text(response);
+                    //elem.hide();// = response;)
                 },
                 error: function(){
-                    alert("failure");
+                    elem.parent().parent().find('[class*="status"]').text(response);
                 },
             });
 
-            $(this).parent().parent().parent().append($('<tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>'));
+            //$(this).parent().parent().parent().append($('<tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>'));
     });
-        $('#make-admin').click(function() {
+        $('.make-admin').click(function() {
+            var elem = $(this);
             $.ajax({
                 type: "POST",
-                url: "http://".base_url()."index.php/admin/make_admin",
+                url: "<?php echo base_url(); ?>admin/make_admin",
                 data: {user_id: $(this).parent().parent().children(':first-child').text()},
                 success: function(response)
                 {
-                    alert(response);
+                    elem.parent().parent().find('[class*="type"]').text(response);
                 },
                 error: function(){
-                    alert("failure");
+                    elem.parent().parent().find('[class*="type"]').text(response);
                 },
             });
 
-            $(this).parent().parent().parent().append($('<tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>'));
+            //$(this).parent().parent().parent().append($('<tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>'));
     });
-        $('#downgrade-admin').click(function() {
+        $('.downgrade-admin').click(function() {
+            var elem = $(this);
             $.ajax({
                 type: "POST",
-                url: "http://".base_url()."index.php/admin/downgrade_admin",
+                url: "<?php echo base_url(); ?>admin/downgrade_admin",
                 data: {user_id: $(this).parent().parent().children(':first-child').text()},
                 success: function(response)
                 {
-                    alert(response);
+                    elem.parent().parent().find('[class*="type"]').text(response);
                 },
                 error: function(){
-                    alert("failure");
+                    elem.parent().parent().find('[class*="type"]').text(response);
                 },
             });
 
-            $(this).parent().parent().parent().append($('<tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>'));
+            //$(this).parent().parent().parent().append($('<tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>'));
     });
     });
     </script>

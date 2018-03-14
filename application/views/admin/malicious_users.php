@@ -15,6 +15,7 @@
                                         <th>College</th>
                                         <th>Level</th>
                                         <th>Malicious</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -26,7 +27,8 @@
                                                 <td class="text-center"><?php echo $userDatas['college']; ?></td>
                                                 <td class="text-center"><?php echo $userDatas['level']; ?></td>
                                                 <td class="text-center"><?php echo $userDatas['malicious']; ?></td>
-                                                <td class="text-center"><i style="cursor: pointer;" id="see" class="fa fa-th" aria-hidden="true"></i></td>
+                                                <td class="status text-center"><?php echo $userDatas['status']; ?></td>
+                                                <td class="text-center"><i style="cursor: pointer; padding-right: 15px;" class="see fa fa-th" aria-hidden="true"></i><i style="cursor: pointer; padding-right: 15px;" id="block" class="fa fa-ban" aria-hidden="true"></i><i style="cursor: pointer; padding-right: 15px;" id="unblock" class="fa fa-check" aria-hidden="true"></i></td>
                                             </tr>
                                         <?php endforeach; ?>
                                 </tbody>
@@ -81,22 +83,60 @@
 
     <script>
         $(document).ready(function(){
-        $('#see').click(function() {
+        $('.see').click(function() {
             $.ajax({
                 type: "POST",
-                url: "http://http://".base_url()."index.php/admin/view_malicious_trials_of",
+                url: "<?php echo base_url(); ?>admin/view_malicious_trials_of",
                 data: {user_id: $(this).parent().parent().children(':first-child').text()},
                 success: function(response)
                 {
                     alert(response);
+                    $(this).parent().parent().parent().parent().append($(response));
                 },
                 error: function(){
                     alert("failure");
                 },
             });
-
-            $(this).parent().parent().parent().append($('<tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>'));
+            var test = '<tr><td>Test</td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>';
+            $(this).parent().parent().parent().parent().append($(response));
     });    });
+    
+        $('.fa-ban').click(function() {
+            var elem = $(this);
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url(); ?>admin/block_user",
+                data: {user_id: $(this).parent().parent().children(':first-child').text()},
+                success: function(response)
+                {
+                    elem.parent().parent().find('[class*="status"]').text(response);
+                    //elem.hide();// = response;)
+                },
+                error: function(){
+                    elem.parent().parent().find('[class*="status"]').text(response);
+                },
+            });
+
+            //$(this).parent().parent().parent().append($('<tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>'));
+    });    
+        $('.fa-check').click(function() {
+            var elem = $(this);
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url(); ?>admin/unblock_user",
+                data: {user_id: $(this).parent().parent().children(':first-child').text()},
+                success: function(response)
+                {
+                    elem.parent().parent().find('[class*="status"]').text(response);
+                    //elem.hide();// = response;)
+                },
+                error: function(){
+                    elem.parent().parent().find('[class*="status"]').text(response);
+                },
+            });
+
+            //$(this).parent().parent().parent().append($('<tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>'));
+    });
     </script>
 
 </body>

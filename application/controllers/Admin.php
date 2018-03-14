@@ -93,25 +93,29 @@ class Admin extends CI_Controller
     public function block_user(){
         $user_id = $_POST['user_id'];
         $this->user->block_user($user_id);
-        echo $user_id;
+        echo "TERMINATED";
+        //echo $user_id;
     }
     
     public function unblock_user(){
         $user_id = $_POST['user_id'];
         $this->user->unblock_user($user_id);
-        echo $user_id;
+        echo "SUSPECTED";
+        //echo $user_id;
     }
     
     public function make_admin(){
         $user_id = $_POST['user_id'];
         $this->user->make_admin($user_id);
-        echo $user_id;
+        //echo $user_id;
+        echo "ADMIN";
     }
     
     public function downgrade_admin(){
         $user_id = $_POST['user_id'];
         $this->user->downgrade_admin($user_id);
-        echo $user_id;
+        //echo $user_id;
+        echo "MODERATOR";
     }
     
     public function view_malicious_trials_of() {
@@ -119,7 +123,20 @@ class Admin extends CI_Controller
          //echo $user_id;
          $data = $this->trials->get_malicious_trials_of($user_id);
          
-         echo(json_encode($data));
+         //echo(json_encode($data));
+         
+         foreach ($data as $dataitem):
+             echo $dataitem['user_input']." , ";
+         endforeach;
+            //echo '<tr>
+//                  <td></td>
+//                  <td>'.$dataitem['user_id'].'</td>
+//                  <td>'.$dataitem['level_no'].'</td>
+//                  <td>'.$dataitem['user_input'].'</td>
+//                  <td>'.$dataitem['ip'].'</td>
+//                  <td>'.$dataitem['date'].'</td>
+//                </tr>';
+        //endforeach;
          
          
     }
