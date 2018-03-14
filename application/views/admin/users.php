@@ -89,7 +89,6 @@
     </script>
 
     <script>
-        $(document).ready(function(){
         $('.fa-ban').click(function() {
             var elem = $(this);
             $.ajax({
@@ -125,7 +124,6 @@
             });
 
             //$(this).parent().parent().parent().append($('<tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>'));
-    });
     });
     </script>
 

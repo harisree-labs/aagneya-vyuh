@@ -129,6 +129,7 @@ class User extends CI_Model {
         public function level_up($data = array()) {
             $email = $this->session->userdata('email');
             $this->db->where('email', $email);
+            $this->db->where_not_in('status', "TERMINATED");
             $this->db->update('user', $data);
             return true;
         }

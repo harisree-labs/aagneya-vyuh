@@ -71,7 +71,7 @@ class Vyuh extends CI_Controller
     
     function answer(){
         if (isset($_POST['answer'])) {
-            $input['answer'] = $_POST['answer'];
+            $input['answer'] = preg_replace("/[^a-zA-Z0-9]+/", "", $_POST['answer']);
             $input['level'] = $this->session->userdata('level')+1;
             $pm = $_POST['submit'];
 

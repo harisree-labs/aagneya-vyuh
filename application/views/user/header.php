@@ -44,7 +44,15 @@
 	<nav class="navbar navbar-default navbar-fixed navbar-scrollspy bootsnav" data-minus-value-desktop="0" data-minus-value-mobile="55" data-speed="800">
 		<div class="container">
 			<!-- Start Header Navigation -->
-			<div class="navbar-header">
+			<div class="navbar-header row">
+                            <div class="col-xs-8">
+                                
+                                <a class="navbar-brand" href="http://aagneyavyuh.co.in">
+                                    <img src="<?php echo base_url(); ?>assets/images/vyuh-logo.jpg" class="logo logo-display" alt="">
+                                    <img src="<?php echo base_url(); ?>assets/images/vyuh-logo.jpg" class="logo logo-scrolled" alt="">
+                                </a>
+                                
+                            </div>
                             <?php if($this->session->userdata('profile_picture')) {echo'<li><div class="hidden-md hidden-lg float-right User-area">
                 <div class="User-avtar">
                  <img src="'.$this->session->userdata('profile_picture').'"/>
@@ -57,10 +65,7 @@
                   </ul>
 </div></li>';} ?>
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <i class="fa fa-bars"></i> </button>
-				<a class="navbar-brand" href="http://aagneyavyuh.co.in">
-           <img src="<?php echo base_url(); ?>assets/images/vyuh-logo.jpg" class="logo logo-display" alt="">
-           <img src="<?php echo base_url(); ?>assets/images/vyuh-logo.jpg" class="logo logo-scrolled" alt="">
-        </a>
+				
 			</div>
 			<!-- End Header Navigation -->
 			<div class="collapse navbar-collapse" id="myNavbar">
