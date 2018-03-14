@@ -9,6 +9,13 @@
 .logo.logo-display {
     display: none !important;
 }
+.logo.logo-scrolled {
+    visibility: hidden;
+
+}
+#myNavbar {
+    background: none !important;
+}
 
 html, body {
     background-color: black !important;

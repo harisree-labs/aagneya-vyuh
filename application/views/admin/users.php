@@ -109,7 +109,7 @@
         $('#unblock').click(function() {
             $.ajax({
                 type: "POST",
-                url: "http://127.0.0.1/vyuh/index.php/admin/unblock_user",
+                url: "http://127.0.0.1/admin/unblock_user",
                 data: {user_id: $(this).parent().parent().children(':first-child').text()},
                 success: function(response)
                 {

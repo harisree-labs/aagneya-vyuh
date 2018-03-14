@@ -63,7 +63,7 @@ img {
   text-align: center;
   -webkit-appearance: none;
   display: block;
-  width: 100%;
+  width: 65%;
   padding: 1em;
   margin-bottom: 1em;
   border-radius: 10px;
@@ -89,13 +89,22 @@ img {
 
 .non-pm {
   display: -webkit-flex !important;
+  width: 98%;
 }
 .pm {
-    width: 100%;
+    width: 98%;
+    margin-left: 1%;
+    outline: none !important;
+}
+.pm input {
+    width: 65%;
 }
 .non-pm button{
     background: wheat;
     color: blue;
+    outline: none !important;
+    width: 35%;
+    padding: 0;
 }
 
 
@@ -132,3 +141,4 @@ img {
   text-align: center;
   margin-bottom: 1.5em;
 }
+

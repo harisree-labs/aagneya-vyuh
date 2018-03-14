@@ -45,11 +45,11 @@
 		<div class="container">
 			<!-- Start Header Navigation -->
 			<div class="navbar-header">
-                            <?php if($this->session->userdata('profile_picture')) {echo'<li><div class="visible-xs User-area">
+                            <?php if($this->session->userdata('profile_picture')) {echo'<li><div class="hidden-md hidden-lg float-right User-area">
                 <div class="User-avtar">
                  <img src="'.$this->session->userdata('profile_picture').'"/>
                 </div>
-                  <ul class="User-Dropdown">
+                  <ul class="text-left User-Dropdown">
                     <div class="user-data">'.$this->session->userdata('name').'<br>'.$this->session->userdata('email').'</div>
                     <li><a>Coins</a><span>'.$this->session->userdata('coins').'</span></li>
                     <li><a href="'.base_url().'profiles">Profile</a></li>

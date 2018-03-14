@@ -8,9 +8,9 @@
     <div class='writeup' id='writeup1'></div>
     <!--<p>login with facebook to play</p>-->
     
-    <a href='<?php echo $loginURL; ?>'><img style="width:200px;" class="login-button" src="https://linksind.net/old/fb.png"></a>
+    <a href='<?php echo $loginURL; ?>'><img style="width:200px;" class="login-button" src="<?php echo base_url(); ?>assets/images/fb.png"></a>
   </div>
-
+<!--
 <ul class="benefits">
   <li>
     <i class="fa fa-bolt" aria-hidden="true"></i>
@@ -29,7 +29,7 @@
     <p>10 K</p>
   </li>
 </ul>
-</div>
+</div>-->
 
 
 <script>

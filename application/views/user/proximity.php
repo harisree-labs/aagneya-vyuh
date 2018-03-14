@@ -2,12 +2,22 @@
 
 <link href="<?php echo base_url(); ?>assets/css/ranklist.css" rel="stylesheet"">
 
+<!-- jQuery -->
+    <script src="<?php echo base_url(); ?>assets/sb/vendor/jquery/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <div class="container">
     <h3 class="ranklist">Proxi Meter</h3>
     <hr>
     <div class="row">
         <div class="col-md-offset-2 col-md-8 col-sm-offset-3 col-sm-6 col-xs-12 panel-start panel-primary filterable">
 
+<div class="alert alert-info alert-dismissable">
+        <a class="panel-close close" data-dismiss="alert">×</a> 
+        <i class="fas fa-dollar-sign"></i>
+        <span id="message">Updated Coin Balance : <?php echo $this->session->userdata('coins'); ?>
+        </span>
+</div>
+            
 <div class="wrapper-p">
   <div class="green-p">
     <div class="progress-p">
@@ -22,6 +32,7 @@
     
 <link href="<?php echo base_url(); ?>assets/css/game.css" rel="stylesheet">
 
+
 <div style="padding-top: 30px;" class="ansform wrap">
   <form class="form" action="answer" method="post">
     <div class="non-pm"><input style="color: black;" class="input" name="answer" type="text" placeholder="Enter your answer..." required>
@@ -35,18 +46,14 @@
 
         
 <script>
-    var colorInc = 100 / 3;
+var colorInc = 100 / 3;
 
 $(function()
 {
-  $("#percent-box").click(function()
+
+  $(document).ready(function()
   {
-    $(this).select();
-  });
-  
-  $("#percent-box").keyup(function()
-  {
-    var val = $(this).val();
+    var val = <?php echo $percentage; ?>;
     
     if(val != ""
       && !isNaN(val)

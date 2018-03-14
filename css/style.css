@@ -640,7 +640,7 @@ nav.navbar.bootsnav.navbar-fixed.fixey .attr-nav .search > a{
 
 /*menu toggle*/
 nav.navbar.bootsnav .navbar-toggle {
-	background-color: #04bee4 !important;
+	background-color: transparent !important;
 	float: right;
 	margin: 5px 0;
 	color: #fff;

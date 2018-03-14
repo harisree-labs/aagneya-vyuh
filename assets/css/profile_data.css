@@ -12,7 +12,7 @@
   border: none;
   background: #0074B1;
   width: 25%;
-  padding: 0 1em;
+  padding: 5px;
   font: inherit;
   border-radius: 25px;
   color: white;
@@ -20,9 +20,19 @@
   line-height: 2;
   text-decoration: none;
   text-align: center;
+  outline: none !important;
 }
 .alert-info {
 	color: beige !important;
-	background-color: #134154 !important;
+	background-color: #333 !important;
 	border-color: #134154 !important;
+}
+
+@media (max-width: 382px) {
+	.input {
+		width: 100%;
+	}
+	.button {
+		width: 45%;
+	}
 }

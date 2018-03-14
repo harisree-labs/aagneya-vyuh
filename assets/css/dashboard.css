@@ -1,12 +1,9 @@
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
 	.offer_text.text-center {
     	padding-bottom: 50px !important;
 	}
 	.navbar-brand img {
 	    max-width: 59px;
-	}
-	.visible-xs.User-area {
-	    margin-left: 100px;
 	}
 }
 .navbar {

@@ -12,7 +12,7 @@
         </span>
       </div>
       <form class="form" action="profile/update" method="post">
-        <input class="input" name="college" type="text" placeholder="Enter your answer..." required>
+        <input class="input" name="college" type="text" placeholder="College / Work..." required>
         <button class="button" type="submit">Submit</button>
       </form>
     </div>

@@ -42,6 +42,11 @@ class Vyuh extends CI_Controller
 
             $email = $this->session->userdata('email');
             $data = $this->level->get_next_question_for_user($email);
+            
+            if (!$data) {
+                $this->load->view('user/header');
+                $this->load->view('user/wait_for_question');
+            } else {
     //        print_r($data);
             $user_history['user_id'] = $this->session->userdata('id');
             $user_history['current_level'] = $this->session->userdata('level');
@@ -56,8 +61,10 @@ class Vyuh extends CI_Controller
     //        $this->load->view('user/game');
             $this->load->view('user/header');
             $this->load->view('game', $data);
+            }
         } else {
-            $this->load->view('wait_for_game');
+            $this->load->view('user/header');
+            $this->load->view('game_finish');
         }
         
     }
