@@ -13,6 +13,7 @@ class Admin extends CI_Controller
         $this->load->model('user');
         $this->load->model('history');
         $this->load->model('trials');
+        $this->load->model('level');
 
         //Load dashboard model
         //$this->load->model('dashboard');
@@ -116,6 +117,28 @@ class Admin extends CI_Controller
         $this->user->downgrade_admin($user_id);
         //echo $user_id;
         echo "MODERATOR";
+    }
+    
+    public function manage_level(){
+        $data['levelData'] = $this->level->retrieve_level_data_admin();
+        $this->load->view('admin/header');
+        $this->load->view('admin/manage_level', $data);
+        //$this->load->view('admin/footer');
+        //$this->load->view('user/dashboard', $data);
+    }
+    
+    public function enable_question(){
+        $level_id = $_POST['level_id'];
+        $this->level->enable_question($level_id);
+        echo "1";
+        //echo $user_id;
+    }
+    
+    public function disable_question(){
+        $level_id = $_POST['level_id'];
+        $this->level->disable_question($level_id);
+        echo "0";
+        //echo $user_id;
     }
     
     public function view_malicious_trials_of() {
